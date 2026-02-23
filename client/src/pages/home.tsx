@@ -167,13 +167,13 @@ export default function Home() {
                       { icon: XCircle, text: "Not a cloud execution platform" },
                       { icon: XCircle, text: "Not a ChatGPT clone" },
                       { icon: XCircle, text: "Not remote-control automation" },
-                      { icon: XCircle, text: "Not a SaaS product (for now)" },
+                      { icon: XCircle, text: "Not a black-box hosted service" },
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 rounded-lg bg-red-50/50 border border-red-100 opacity-60 grayscale hover:grayscale-0 transition-all">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
                           <item.icon className="h-5 w-5 text-red-600" />
                         </div>
-                        <span className="font-medium text-red-900">{item.text}</span>
+                        <span className="font-medium text-red-900">{item.text === "Not a SaaS product (for now)" ? "Not a black-box hosted service" : item.text}</span>
                       </div>
                     ))}
                   </div>
