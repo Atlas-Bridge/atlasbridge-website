@@ -1,0 +1,179 @@
+# Replit Prompt — AtlasBridge Logo Asset Pack (Web + Product + Social)
+
+I’m building an open-source project called **AtlasBridge** and I have an existing logo file that I will attach.  
+Your job is to create a **complete, production-ready logo asset pack** for future use across:
+
+- Website (light + dark)
+- Documentation / README
+- Dashboard UI
+- Social media (LinkedIn, GitHub, X)
+- Favicons + app icons
+
+## Inputs
+- I will attach the current logo image(s).
+- Assume the logo includes:
+  - **Icon mark** (arch/bridge symbol)
+  - **Wordmark** (“AtlasBridge”)
+
+## Output Requirements (IMPORTANT)
+1) **Do NOT combine multiple layouts in one image**.  
+   Every version must be a separate file.
+
+2) Produce both:
+   - **PNG (transparent background)** for quick usage
+   - **SVG (vector)** for long-term quality
+
+3) Create a clean folder structure and name files consistently.
+
+4) If the source is not vector, recreate a **clean vector-style SVG** based on the provided logo (no jagged edges).
+
+5) Keep the design **minimal, enterprise, infrastructure-grade** (no playful AI blobs, no neon, no glow).
+
+---
+
+## 1) Core Logo Variants to Produce
+
+### A) Primary Logo — Light Background
+- Icon + wordmark (horizontal)
+- Transparent background
+- Centered
+- Exports:
+  - `logo-primary-light.svg`
+  - `logo-primary-light.png` (at 4096px wide)
+
+### B) Primary Logo — Dark Mode
+- Icon + wordmark (horizontal)
+- Wordmark/icon recolored to work on dark navy backgrounds
+- Transparent background
+- Exports:
+  - `logo-primary-dark.svg`
+  - `logo-primary-dark.png` (4096px wide)
+
+### C) Icon-Only (Primary Mark)
+- Icon only (no wordmark)
+- Must be legible at small sizes (avoid fine internal lines)
+- Exports:
+  - `icon.svg`
+  - `icon-1024.png`
+  - `icon-512.png`
+  - `icon-256.png`
+
+### D) Monochrome Versions
+- Pure black (no gradients)
+- Pure white (no gradients)
+- Exports:
+  - `logo-mono-black.svg`
+  - `logo-mono-black.png`
+  - `logo-mono-white.svg`
+  - `logo-mono-white.png`
+  - `icon-mono-black.svg`
+  - `icon-mono-white.svg`
+
+---
+
+## 2) Favicon + Web App Icons
+
+Generate these **from the icon-only mark**.
+
+### Favicons
+- `favicon-16.png` (16x16)
+- `favicon-32.png` (32x32)
+- `favicon-48.png` (48x48)
+- `favicon-64.png` (64x64)
+- `favicon.ico` (multi-size: 16, 32, 48)
+
+### Apple / PWA
+- `apple-touch-icon.png` (180x180)
+- `android-chrome-192.png` (192x192)
+- `android-chrome-512.png` (512x512)
+
+Notes:
+- Slightly thicken strokes for 16x16 / 32x32 if needed.
+- No wordmark in favicons.
+
+---
+
+## 3) Social Media Assets
+
+### GitHub / LinkedIn Avatar
+- Square icon-only, centered, safe padding
+- Exports:
+  - `avatar-400.png` (400x400)
+  - `avatar-800.png` (800x800)
+  - `avatar-1024.png` (1024x1024)
+
+### LinkedIn Banner (Optional but recommended)
+Create a **clean banner** with:
+- Dark navy background
+- Logo on left
+- Tagline: “Controlled autonomy for AI agents.”
+
+Exports:
+- `linkedin-banner.png` (recommended: 1584x396)
+
+---
+
+## 4) Folder Structure (Create Exactly This)
+brand/
+svg/
+logo-primary-light.svg
+logo-primary-dark.svg
+icon.svg
+logo-mono-black.svg
+logo-mono-white.svg
+icon-mono-black.svg
+icon-mono-white.svg
+
+png/
+logo-primary-light.png
+logo-primary-dark.png
+logo-mono-black.png
+logo-mono-white.png
+icon-1024.png
+icon-512.png
+icon-256.png
+
+favicons/
+favicon-16.png
+favicon-32.png
+favicon-48.png
+favicon-64.png
+favicon.ico
+apple-touch-icon.png
+android-chrome-192.png
+android-chrome-512.png
+
+social/
+avatar-400.png
+avatar-800.png
+avatar-1024.png
+linkedin-banner.png
+
+---
+
+## 5) Color Guidance (Use if helpful)
+If you need a brand palette:
+- Navy: `#0B2A3C`
+- Dark background: `#071D2B`
+- Neutral slate: `#6E7A86`
+- Accent teal (optional, very sparing): `#1F8A8C`
+
+No gradients for mono variants.
+
+---
+
+## 6) Deliverables
+When finished, provide:
+1) The full `brand/` folder
+2) A short `brand/README.md` describing:
+   - What each asset is for
+   - Recommended usage (website header, favicon, LinkedIn avatar, etc.)
+
+---
+
+## Extra Quality Rules
+- Ensure alignment is clean and centered.
+- Ensure consistent padding/safe area for icons.
+- Ensure icon-only mark reads well at 16–32px.
+
+Start by inspecting the attached logo(s), then produce the entire asset pack above.
