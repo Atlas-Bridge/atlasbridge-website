@@ -30,6 +30,7 @@ Pre-sized web icons ready for immediate deployment in \`public/\` or \`static/\`
 Assets optimized for GitHub, LinkedIn, and X platforms.
 - \`avatar-*.png\` – Icon-only squared profile images on the primary navy background.
 - \`linkedin-banner.png\` – Professional banner featuring the dark background, logo, and project tagline.
+- \`linkedin-announcement.png\` – High-impact 1200x627px announcement image for social posts.
 
 ## Master Production Files
 
