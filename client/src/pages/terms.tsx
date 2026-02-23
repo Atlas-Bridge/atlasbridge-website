@@ -87,7 +87,7 @@ export default function Terms() {
             <h2 className="text-xl font-bold text-[#0B2A3C] mb-3">Contact</h2>
             <p>
               For questions about these terms, please open an issue on the{" "}
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-[#1F8A8C] font-medium hover:underline" data-testid="link-github-terms">
+              <a href="https://github.com/Atlas-Bridge" target="_blank" rel="noopener noreferrer" className="text-[#1F8A8C] font-medium hover:underline" data-testid="link-github-terms">
                 AtlasBridge GitHub repository
               </a>.
             </p>

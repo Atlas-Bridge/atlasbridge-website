@@ -69,7 +69,7 @@ export default function SecurityPage() {
               <ul className="space-y-1.5 ml-1">
                 <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
                   Open a private security advisory on the{" "}
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-[#1F8A8C] font-medium hover:underline" data-testid="link-github-security">
+                  <a href="https://github.com/Atlas-Bridge" target="_blank" rel="noopener noreferrer" className="text-[#1F8A8C] font-medium hover:underline" data-testid="link-github-security">
                     AtlasBridge GitHub repository
                   </a>.
                 </li>

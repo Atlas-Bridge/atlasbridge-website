@@ -250,7 +250,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" className="hidden sm:flex border-[#0B2A3C] text-[#0B2A3C] hover:bg-[#0B2A3C]/5 gap-2 transition-all duration-300 hover:scale-105" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" />GitHub</a>
+              <a href="https://github.com/Atlas-Bridge" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" />GitHub</a>
             </Button>
             <Button className="hidden sm:flex bg-[#0B2A3C] text-white hover:bg-[#071D2B] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#0B2A3C]/20" asChild>
               <Link href="/docs">View Docs</Link>
@@ -278,7 +278,7 @@ export default function Home() {
             <Link href="/docs/quickstart" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 rounded-lg text-sm font-medium hover:bg-[#F5F7F9] transition-colors">Quick Start</Link>
             <div className="flex gap-2 pt-2 border-t mt-2">
               <Button variant="outline" className="flex-1 border-[#0B2A3C] text-[#0B2A3C] gap-2" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" />GitHub</a>
+                <a href="https://github.com/Atlas-Bridge" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" />GitHub</a>
               </Button>
               <Button className="flex-1 bg-[#0B2A3C] text-white hover:bg-[#071D2B]" asChild>
                 <Link href="/docs" onClick={() => setMobileMenuOpen(false)}>View Docs</Link>
@@ -636,7 +636,7 @@ export default function Home() {
               <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">Resources</h5>
               <ul className="space-y-3 sm:space-y-4 text-sm text-[#6E7A86]">
                 <li><Link href="/docs" className="hover:text-white transition-colors duration-300">Documentation</Link></li>
-                <li><a href="https://github.com" className="hover:text-white transition-colors duration-300 flex items-center gap-2"><Github className="h-4 w-4" /> GitHub</a></li>
+                <li><a href="https://github.com/Atlas-Bridge" className="hover:text-white transition-colors duration-300 flex items-center gap-2"><Github className="h-4 w-4" /> GitHub</a></li>
                 <li><Link href="/docs/security" className="hover:text-white transition-colors duration-300">Security Policy</Link></li>
               </ul>
             </div>
@@ -653,7 +653,7 @@ export default function Home() {
           <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#6E7A86]">
             <p>© 2026 AtlasBridge Contributors. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 flex items-center gap-1"><Github className="h-3 w-3" /> GitHub</a>
+              <a href="https://github.com/Atlas-Bridge" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 flex items-center gap-1"><Github className="h-3 w-3" /> GitHub</a>
             </div>
           </div>
         </div>
