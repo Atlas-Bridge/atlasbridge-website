@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" width="1600" height="400">
+  <g id="Logo_Master_Outlined" transform="translate(40, 50)">
+    <g id="Icon">
+      <path d="M 20 60 H 380 V 100 H 360 V 340 H 280 V 220 A 80 80 0 0 0 120 220 V 340 H 40 V 100 H 20 Z" fill="#0B2A3C" />
+    </g>
+    <g id="Wordmark_Outlined">
+      <!-- Atlas (Inter Bold Approximation) -->
+      <path d="M420 255 L475 100 H530 L585 255 H545 L530 210 H475 L460 255 Z" fill="#0B2A3C" /> <!-- A placeholder for outlined text -->
+      <path d="M600 120 H720 V150 H675 V255 H635 V150 H600 Z" fill="#0B2A3C" /> <!-- T -->
+      <path d="M740 100 H780 V220 H860 V255 H740 Z" fill="#0B2A3C" /> <!-- L -->
+      <!-- Bridge (Inter Medium Approximation) -->
+      <path d="M1050 100 H1120 Q1160 100 1160 140 Q1160 180 1120 180 H1050 V255 H1010 V100 Z" fill="#6E7A86" /> <!-- B -->
+    </g>
+  </g>
+  <desc>Note: This is a simplified outlined representation for the master file. For professional production, use the 'logo-master.svg' and 'Create Outlines' (Cmd+Shift+O) in Adobe Illustrator.</desc>
+</svg>
