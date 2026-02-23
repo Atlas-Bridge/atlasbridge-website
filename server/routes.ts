@@ -3,6 +3,8 @@ import { createServer, type Server } from "http";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import bcrypt from "bcrypt";
+import fs from "fs";
+import path from "path";
 import { storage } from "./storage";
 import { pool } from "./db";
 import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "@shared/schema";
@@ -225,6 +227,35 @@ export async function registerRoutes(
     const limit = parseInt(req.query.limit as string) || 100;
     const logs = await storage.getAuditLogs(limit);
     res.json(logs);
+  });
+
+  app.get("/api/docs", (_req, res) => {
+    const docsDir = path.resolve(process.cwd(), "docs");
+    try {
+      const files = fs.readdirSync(docsDir).filter(f => f.endsWith(".md")).sort();
+      const docs = files.map(f => ({
+        slug: f.replace(".md", ""),
+        title: f.replace(".md", "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
+      }));
+      res.json(docs);
+    } catch {
+      res.json([]);
+    }
+  });
+
+  app.get("/api/docs/:slug", (req, res) => {
+    const docsDir = path.resolve(process.cwd(), "docs");
+    const slug = req.params.slug.replace(/[^a-z0-9-]/gi, "");
+    const filePath = path.join(docsDir, `${slug}.md`);
+    try {
+      if (!fs.existsSync(filePath)) {
+        return res.status(404).json({ message: "Document not found" });
+      }
+      const content = fs.readFileSync(filePath, "utf-8");
+      res.json({ slug, content });
+    } catch {
+      res.status(500).json({ message: "Failed to read document" });
+    }
   });
 
   return httpServer;

@@ -40,10 +40,10 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" className="hidden sm:flex border-[#0B2A3C] text-[#0B2A3C] hover:bg-[#0B2A3C]/5" asChild>
-              <a href="#login">Login</a>
+              <Link href="/login">Login</Link>
             </Button>
             <Button className="bg-[#0B2A3C] text-white hover:bg-[#071D2B]" asChild>
-              <a href="#install">View Docs</a>
+              <Link href="/docs">View Docs</Link>
             </Button>
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
@@ -70,10 +70,10 @@ export default function Home() {
                 </p>
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Button size="lg" className="bg-[#1F8A8C] text-white hover:bg-[#1F8A8C]/90 px-8" asChild>
-                    <a href="#install">Get Started</a>
+                    <Link href="/docs/quickstart">Get Started</Link>
                   </Button>
                   <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" asChild>
-                    <a href="#docs">View Documentation</a>
+                    <Link href="/docs">View Documentation</Link>
                   </Button>
                 </div>
               </div>
@@ -373,9 +373,9 @@ export default function Home() {
             <div>
               <h5 className="font-bold mb-6 uppercase text-xs tracking-widest text-white/40">Resources</h5>
               <ul className="space-y-4 text-sm text-[#6E7A86]">
-                <li><a href="#docs" className="hover:text-white transition-colors">Documentation</a></li>
+                <li><Link href="/docs" className="hover:text-white transition-colors">Documentation</Link></li>
                 <li><a href="https://github.com" className="hover:text-white transition-colors flex items-center gap-2"><Github className="h-4 w-4" /> GitHub</a></li>
-                <li><a href="#security" className="hover:text-white transition-colors">Security Policy</a></li>
+                <li><Link href="/docs/security" className="hover:text-white transition-colors">Security Policy</Link></li>
               </ul>
             </div>
             <div>

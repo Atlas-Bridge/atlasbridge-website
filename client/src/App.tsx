@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Policies from "./pages/policies";
 import AuditLog from "./pages/audit-log";
+import Docs from "./pages/docs";
 
 function Router() {
   return (
@@ -18,6 +19,8 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/policies" component={Policies} />
       <Route path="/audit-log" component={AuditLog} />
+      <Route path="/docs" component={Docs} />
+      <Route path="/docs/:slug" component={Docs} />
       <Route component={NotFound} />
     </Switch>
   );
