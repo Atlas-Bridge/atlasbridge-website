@@ -231,4 +231,4 @@ The following sequence describes the end-to-end flow for a single agent action:
 - **Frontend:** React, Tailwind CSS, shadcn/ui
 - **Routing:** wouter (frontend), Express (backend)
 
-See [Overview](./overview.md) for design principles and [Installation](./installation.md) for setup instructions.
+See [Overview](./overview.md) for design principles and [Installation](./installation.md) for setup instructions. Return to the [documentation index](./index.md) for a full list of available guides.

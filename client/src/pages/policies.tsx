@@ -5,9 +5,9 @@ import { apiRequest } from "@/lib/queryClient";
 import { Link, useLocation } from "wouter";
 import {
   Shield, FileText, Activity, LogOut, Plus, Trash2, ShieldCheck,
-  ToggleLeft, ToggleRight,
+  ToggleLeft, ToggleRight, Menu, X,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,6 +27,7 @@ export default function Policies() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [enforcement, setEnforcement] = useState("strict");
+  const [mobileNav, setMobileNav] = useState(false);
 
   const { data: policies, isLoading } = useQuery<any[]>({
     queryKey: ["/api/policies"],
@@ -71,11 +72,11 @@ export default function Policies() {
   return (
     <div className="min-h-screen bg-[#F5F7F9] font-sans">
       <nav className="bg-[#0B2A3C] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-4 sm:gap-8">
             <Link href="/dashboard" className="flex items-center gap-2">
               <ShieldCheck className="h-6 w-6 text-[#1F8A8C]" />
-              <span className="text-white font-bold text-lg">AtlasBridge</span>
+              <span className="text-white font-bold text-lg hidden sm:inline">AtlasBridge</span>
             </Link>
             <div className="hidden md:flex items-center gap-1">
               <Link href="/dashboard">
@@ -95,8 +96,8 @@ export default function Policies() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-white/60 text-sm">{user?.username}</span>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <span className="text-white/60 text-sm hidden sm:inline">{user?.username}</span>
             <Button
               variant="ghost" size="sm"
               className="text-white/60 hover:text-white hover:bg-white/10"
@@ -105,23 +106,49 @@ export default function Policies() {
             >
               <LogOut className="h-4 w-4" />
             </Button>
+            <Button
+              variant="ghost" size="sm"
+              className="md:hidden text-white/80 hover:text-white hover:bg-white/10"
+              onClick={() => setMobileNav(!mobileNav)}
+            >
+              {mobileNav ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
           </div>
         </div>
+        {mobileNav && (
+          <div className="md:hidden border-t border-white/10 px-4 py-3 space-y-1">
+            <Link href="/dashboard" onClick={() => setMobileNav(false)}>
+              <Button variant="ghost" className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10">
+                <Activity className="h-4 w-4 mr-2" />Dashboard
+              </Button>
+            </Link>
+            <Link href="/policies" onClick={() => setMobileNav(false)}>
+              <Button variant="ghost" className="w-full justify-start text-white bg-white/10">
+                <FileText className="h-4 w-4 mr-2" />Policies
+              </Button>
+            </Link>
+            <Link href="/audit-log" onClick={() => setMobileNav(false)}>
+              <Button variant="ghost" className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10">
+                <Shield className="h-4 w-4 mr-2" />Audit Log
+              </Button>
+            </Link>
+          </div>
+        )}
       </nav>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex items-center justify-between mb-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2A3C]" data-testid="text-policies-title">Governance Policies</h1>
-            <p className="text-[#6E7A86] mt-1">Define rules that govern agent behavior</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-[#0B2A3C]" data-testid="text-policies-title">Governance Policies</h1>
+            <p className="text-[#6E7A86] mt-1 text-sm sm:text-base">Define rules that govern agent behavior</p>
           </div>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-[#1F8A8C] hover:bg-[#1a7577] text-white" data-testid="button-create-policy">
+              <Button className="bg-[#1F8A8C] hover:bg-[#1a7577] text-white w-full sm:w-auto" data-testid="button-create-policy">
                 <Plus className="h-4 w-4 mr-2" />New Policy
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-lg">
+            <DialogContent className="sm:max-w-lg mx-4 sm:mx-auto">
               <DialogHeader>
                 <DialogTitle className="text-[#0B2A3C]">Create Governance Policy</DialogTitle>
               </DialogHeader>
@@ -175,17 +202,17 @@ export default function Policies() {
         </div>
 
         {isLoading ? (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {[...Array(3)].map((_, i) => (
               <Card key={i} className="animate-pulse border-0"><CardContent className="h-20" /></Card>
             ))}
           </div>
         ) : !policies || policies.length === 0 ? (
           <Card className="border-0 shadow-sm">
-            <CardContent className="py-16 text-center">
+            <CardContent className="py-12 sm:py-16 text-center">
               <FileText className="h-12 w-12 mx-auto mb-4 text-[#6E7A86] opacity-40" />
               <h3 className="text-lg font-bold text-[#0B2A3C] mb-2">No policies defined</h3>
-              <p className="text-[#6E7A86] mb-6 max-w-md mx-auto">
+              <p className="text-[#6E7A86] mb-6 max-w-md mx-auto text-sm sm:text-base">
                 Governance policies define the rules agents must follow. Create your first policy to start governing agent behavior.
               </p>
               <Button
@@ -198,24 +225,24 @@ export default function Policies() {
             </CardContent>
           </Card>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {policies.map((policy: any) => (
               <Card key={policy.id} className="border-0 shadow-sm" data-testid={`card-policy-${policy.id}`}>
-                <CardContent className="py-5">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${
+                <CardContent className="py-4 sm:py-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+                    <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${
                         policy.enabled ? "bg-[#1F8A8C]/10" : "bg-gray-100"
                       }`}>
                         <FileText className={`h-5 w-5 ${policy.enabled ? "text-[#1F8A8C]" : "text-gray-400"}`} />
                       </div>
-                      <div>
-                        <h3 className="font-bold text-[#0B2A3C]">{policy.name}</h3>
-                        <p className="text-sm text-[#6E7A86]">{policy.description || "No description"}</p>
+                      <div className="min-w-0">
+                        <h3 className="font-bold text-[#0B2A3C] text-sm sm:text-base truncate">{policy.name}</h3>
+                        <p className="text-xs sm:text-sm text-[#6E7A86] truncate">{policy.description || "No description"}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className={`text-xs font-bold px-2 py-1 rounded ${
+                    <div className="flex items-center gap-2 sm:gap-3 ml-[52px] sm:ml-0">
+                      <span className={`text-[10px] sm:text-xs font-bold px-2 py-1 rounded ${
                         policy.enforcement === "strict" ? "bg-red-100 text-red-700" :
                         policy.enforcement === "warn" ? "bg-amber-100 text-amber-700" :
                         "bg-blue-100 text-blue-700"

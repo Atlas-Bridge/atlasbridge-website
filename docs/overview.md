@@ -32,4 +32,4 @@ AtlasBridge is not a black-box hosted service. The policy evaluation logic is tr
 
 **Audit traceability.** Every evaluation, decision, escalation, and override is recorded in an append-only log. The audit trail is the system of record for all governance activity.
 
-See [Architecture](./architecture.md) for details on how these principles are implemented in the runtime.
+See [Architecture](./architecture.md) for details on how these principles are implemented in the runtime. Return to the [documentation index](./index.md) for a full list of available guides.
