@@ -31,16 +31,16 @@ export default function Home() {
               <span className="text-xl font-bold tracking-tight text-[#0B2A3C]">Atlas<span className="text-[#6E7A86] font-medium">Bridge</span></span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1">
-              <Link href="/login" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Login</Link>
-              <a href="#overview" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Overview</a>
-              <a href="#how-it-works" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">How it Works</a>
-              <a href="#security" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Security</a>
-              <a href="#roadmap" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Roadmap</a>
+              <Link href="/docs" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Docs</Link>
+              <Link href="/docs/overview" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Overview</Link>
+              <Link href="/docs/architecture" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Architecture</Link>
+              <Link href="/docs/security" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Security</Link>
+              <Link href="/docs/quickstart" className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2">Quick Start</Link>
             </nav>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="outline" className="hidden sm:flex border-[#0B2A3C] text-[#0B2A3C] hover:bg-[#0B2A3C]/5" asChild>
-              <Link href="/login">Login</Link>
+            <Button variant="outline" className="hidden sm:flex border-[#0B2A3C] text-[#0B2A3C] hover:bg-[#0B2A3C]/5 gap-2" asChild>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" />GitHub</a>
             </Button>
             <Button className="bg-[#0B2A3C] text-white hover:bg-[#071D2B]" asChild>
               <Link href="/docs">View Docs</Link>
@@ -381,16 +381,15 @@ export default function Home() {
             <div>
               <h5 className="font-bold mb-6 uppercase text-xs tracking-widest text-white/40">Legal</h5>
               <ul className="space-y-4 text-sm text-[#6E7A86]">
-                <li><a href="#license" className="hover:text-white transition-colors">Apache 2.0 License</a></li>
-                <li><a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><Link href="/docs/compliance-alignment" className="hover:text-white transition-colors">Apache 2.0 License</Link></li>
+                <li><Link href="/docs/governance" className="hover:text-white transition-colors">Governance</Link></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#6E7A86]">
             <p>© 2026 AtlasBridge Contributors. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#twitter" className="hover:text-white transition-colors">Twitter / X</a>
-              <a href="#linkedin" className="hover:text-white transition-colors">LinkedIn</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1"><Github className="h-3 w-3" /> GitHub</a>
             </div>
           </div>
         </div>
