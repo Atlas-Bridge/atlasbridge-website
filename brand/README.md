@@ -6,6 +6,7 @@ This folder contains a complete, production-ready set of logos and brand assets 
 
 ### \`svg/\`
 Scalable vector source files for UI development and high-quality web usage.
+- \`wordmark-light.svg\` & \`wordmark-dark.svg\` – Full wordmark SVGs.
 - \`logo-primary-light.svg\` – Horizontal icon + wordmark, for light backgrounds.
 - \`logo-primary-dark.svg\` – Horizontal icon + wordmark, for dark navy backgrounds.
 - \`icon.svg\` – Primary mark only (no text).
