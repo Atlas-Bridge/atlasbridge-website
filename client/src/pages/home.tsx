@@ -193,6 +193,9 @@ export default function Home() {
           background-size: 200% 100%;
           animation: shimmer 3s ease-in-out infinite;
         }
+        .animate-bar-shimmer {
+          animation: shimmer 3s ease-in-out infinite;
+        }
         .animate-gradient {
           background-size: 200% 200%;
           animation: gradient-shift 8s ease infinite;
@@ -486,8 +489,9 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-[#1F8A8C] to-[#0B2A3C] rounded-full animate-shimmer" style={{ width: "100%" }} />
+                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden relative">
+                        <div className="h-full w-full bg-gradient-to-r from-[#1F8A8C] to-[#0B2A3C] rounded-full" />
+                        <div className="absolute inset-0 rounded-full animate-bar-shimmer" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)", backgroundSize: "200% 100%" }} />
                       </div>
                       <div className="flex justify-between text-xs text-[#6E7A86]">
                         <span>Policy Evaluation</span>
