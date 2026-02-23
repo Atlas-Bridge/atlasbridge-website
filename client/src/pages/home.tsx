@@ -225,7 +225,11 @@ export default function Home() {
         }
       `}</style>
 
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-[#0B2A3C] focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm" data-testid="link-skip-to-content">
+        Skip to main content
+      </a>
+
+      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md" role="banner">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2 group">
@@ -257,8 +261,10 @@ export default function Home() {
               className="lg:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               data-testid="button-mobile-menu"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </Button>
           </div>
         </div>
@@ -282,7 +288,7 @@ export default function Home() {
         )}
       </header>
 
-      <main>
+      <main id="main-content" role="main">
         {/* Hero */}
         <section id="overview" className="relative overflow-hidden bg-[#071D2B] py-16 sm:py-24 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-[#071D2B] via-[#0B2A3C] to-[#071D2B] animate-gradient" />
@@ -459,7 +465,7 @@ export default function Home() {
                       "Policy-governed execution with deterministic evaluation.",
                       "Append-only audit trail with integrity verification.",
                       "Local-first execution boundary (no remote execution by default).",
-                      "Supports security review workflows (e.g., ISO 27001 / SOC 2 aligned controls)."
+                      "Designed to support governance and auditability workflows."
                     ].map((bullet, i) => (
                       <FadeUp key={i} delay={0.1 * (i + 1)}>
                         <div className="flex gap-3 sm:gap-4 items-start group">
@@ -611,7 +617,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#071D2B] text-white py-12 sm:py-16">
+      <footer className="bg-[#071D2B] text-white py-12 sm:py-16" role="contentinfo">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-10 sm:gap-12 sm:grid-cols-2 lg:grid-cols-4 mb-12 sm:mb-16">
             <div className="sm:col-span-2">
@@ -637,8 +643,10 @@ export default function Home() {
             <div>
               <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">Legal</h5>
               <ul className="space-y-3 sm:space-y-4 text-sm text-[#6E7A86]">
-                <li><Link href="/docs/compliance-alignment" className="hover:text-white transition-colors duration-300">Apache 2.0 License</Link></li>
-                <li><Link href="/docs/governance" className="hover:text-white transition-colors duration-300">Governance</Link></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors duration-300" data-testid="link-privacy">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-white transition-colors duration-300" data-testid="link-terms">Terms of Use</Link></li>
+                <li><Link href="/security" className="hover:text-white transition-colors duration-300" data-testid="link-security">Security</Link></li>
+                <li><Link href="/docs/compliance-alignment" className="hover:text-white transition-colors duration-300" data-testid="link-license">Apache 2.0 License</Link></li>
               </ul>
             </div>
           </div>
