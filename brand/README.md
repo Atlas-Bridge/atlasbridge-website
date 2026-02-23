@@ -14,7 +14,8 @@ Scalable vector source files for UI development and high-quality web usage.
 ### \`png/\`
 High-resolution (4096px wide) transparent PNGs for quick usage in marketing, presentations, or documents.
 - Includes primary, dark, and monochrome versions.
-- Includes \`icon-*.png\` at multiple sizes for app usage.
+- `wordmark-light.png` & `wordmark-dark.png` – High-resolution horizontal wordmarks.
+- Includes `icon-*.png` at multiple sizes for app usage.
 
 ### \`favicons/\`
 Pre-sized web icons ready for immediate deployment in \`public/\` or \`static/\` directories.
