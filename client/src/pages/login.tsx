@@ -44,7 +44,7 @@ export default function Login() {
             </Button>
             <div className="text-center">
               <p className="text-sm text-[#6E7A86]">
-                Don't have access? <a href="#" className="text-[#1F8A8C] font-bold hover:underline">Request a demo</a>
+                New to the project? <a href="https://github.com" className="text-[#1F8A8C] font-bold hover:underline">Explore the Docs</a>
               </p>
             </div>
             <div className="pt-4 border-t flex gap-4 justify-center grayscale opacity-50">
