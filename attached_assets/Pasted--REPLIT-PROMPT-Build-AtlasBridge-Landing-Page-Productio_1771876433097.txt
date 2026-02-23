@@ -1,0 +1,171 @@
+# REPLIT PROMPT — Build AtlasBridge Landing Page (Production-grade, Brand-correct)
+
+You are building a **static marketing landing page** for a software project called **AtlasBridge**.
+
+## ✅ Goals
+Create a clean, enterprise-grade landing page that:
+- Looks credible to engineering leaders and security/compliance teams
+- Uses AtlasBridge’s official brand system (colors/typography)
+- Uses the provided logo assets (already available in the project)
+- Is appropriate for all audiences: **DV-safe, business-safe, non-emotional, non-political**
+- Avoids hype language, avoids “AI magic” claims
+- Includes compliance-friendly wording (ISO 27001 / SOC2 *aligned* posture) **without making unverifiable certification claims**
+
+## 🚫 Hard Rules
+- Do **NOT** claim “ISO 27001 certified” or “SOC2 certified” unless explicitly backed by evidence.
+- You may say “designed to support compliance workflows” or “supports auditability” but avoid legal promises.
+- Do **NOT** mention weapons, politics, personal life, DV, or anything sensitive.
+- Do **NOT** add tracking scripts, cookies, analytics, or external fonts unless requested.
+- Keep everything static (no backend). Login button is a placeholder only.
+
+---
+
+## Brand System (Must Apply)
+### Colors
+- Primary (Atlas Navy): `#0B2A3C`
+- Dark background (Deep Control Navy): `#071D2B`
+- Light background (Foundation Light): `#F5F7F9`
+- Secondary neutral (Bridge Slate): `#6E7A86`
+- Accent (Governance Teal): `#1F8A8C` (use sparingly)
+- Status (muted): Success `#1E7E34`, Warning `#C77D00`, Danger `#A4161A`
+
+### Typography
+- Use system font stack that matches Inter feel (no external fetch):
+  - `font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";`
+- Monospace for code blocks:
+  - `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`
+
+### Visual Style
+- Minimal, infrastructure-grade, calm.
+- No futuristic blobs, no neon gradients, no cartoon imagery.
+- Subtle hero background gradient is okay: `#071D2B → #0B2A3C` (very subtle).
+
+---
+
+## Required Page Sections (Information Architecture)
+### 1) Header (Top Navigation)
+- Left: AtlasBridge logo (use primary logo for light mode OR white version for dark header)
+- Navigation links: Overview, How it Works, Security, Docs, Roadmap
+- Top right: Buttons:
+  - Primary: “View Docs”
+  - Secondary: “Login” (top-right, not top-left)
+- Also include a “Login” entry in top nav.  
+**Note:** user asked “login button at top left” — implement BOTH:
+- A small “Login” link at top-left near logo (for the requirement)
+- And a clearer button at top-right for UX
+
+Login button behavior: link to `/login` placeholder route OR `#login` section (no backend).
+
+### 2) Hero Section
+Headline (H1):
+- “Controlled Autonomy for AI Agents”
+Subheadline:
+- “AtlasBridge is a deterministic governance runtime that supervises AI CLI agents with policy-driven execution, structured escalation, and audit-grade traceability.”
+CTAs:
+- “Get Started” (scrolls to Install section)
+- “View Documentation” (links to docs URL placeholder)
+
+Hero Visual:
+- Use a static mock terminal card + a “Policy Decision Trace” card
+- Include small labels: “Deterministic evaluation”, “Append-only audit log”, “Local execution”
+
+### 3) What It Is / What It Is Not
+Two-column layout:
+- What it is:
+  - Deterministic governance runtime
+  - Policy DSL
+  - Human escalation
+  - Audit trail + trace
+- What it is not:
+  - Not a cloud execution platform
+  - Not a ChatGPT clone
+  - Not remote-control automation
+  - Not a SaaS product (for now)
+
+### 4) How It Works (3–5 steps)
+Use numbered steps with minimal text and icons (simple SVG).
+Steps should reflect the invariant: Cloud observes, local executes.
+
+### 5) Security & Compliance Posture (Careful Wording)
+Title: “Security & Compliance Alignment”
+Include bullet points phrased safely:
+- “Designed to support auditability and evidence collection.”
+- “Policy-governed execution with deterministic evaluation.”
+- “Append-only audit trail with integrity verification.”
+- “Local-first execution boundary (no remote execution by default).”
+- “Supports security review workflows (e.g., ISO 27001 / SOC 2 aligned controls), depending on your deployment and operational processes.”
+Add disclaimer line:
+- “Compliance outcomes depend on your environment, controls, and operating procedures.”
+
+### 6) Features Grid (Core capabilities)
+Cards:
+- Policy-driven autonomy modes (Off / Assist / Full)
+- Structured escalation
+- Deterministic prompt classification
+- Audit log integrity chain
+- Replay / simulation (if applicable, else say “Roadmapped”)
+- Operator console / dashboard (read-only)
+
+### 7) Installation / Quick Start (Static)
+Show code blocks:
+- `pip install atlasbridge`
+- `atlasbridge setup --channel telegram`
+- `atlasbridge run claude`
+Do not include secrets. Add warning: “Never paste tokens into public logs.”
+
+### 8) Roadmap Preview
+Show 4 roadmap bullets:
+- v1.0 GA hard freeze
+- Deterministic replay (pre-GA)
+- Policy debug mode (pre-GA)
+- Observe-only cloud path (post-GA, design only)
+
+### 9) Footer
+- Links: GitHub, Docs, Security, License
+- Small disclaimer:
+  - “AtlasBridge is local-first. Cloud features are observe-only by design.”
+
+---
+
+## Accessibility + UX Requirements
+- Must be responsive (mobile-first).
+- Support dark mode (CSS only).
+- Good contrast ratios.
+- Use semantic HTML, ARIA labels for nav and buttons.
+- No motion-heavy animations. If any animation: subtle fade-in only.
+
+---
+
+## Technical Requirements
+- Use **Next.js (App Router)** OR **Vite + React** OR plain HTML/CSS (choose simplest).
+- Prefer: **Vite + React + TypeScript** (simple to run).
+- No external dependencies unless necessary.
+- No backend.
+- Provide clear instructions in README for running locally:
+  - `npm install`
+  - `npm run dev`
+
+---
+
+## Assets
+The project already contains AtlasBridge logo files.
+You must:
+- Inspect the `/assets` (or similar) directory
+- Use:
+  - Primary logo (light)
+  - White logo (dark)
+  - Icon-only for favicon
+- Implement favicon set references in `<head>`:
+  - 16x16, 32x32, 180x180, 512x512
+
+---
+
+## Output Deliverables
+1) Complete landing page implementation
+2) Dark mode + light mode
+3) Responsive design
+4) Placeholder `/login` page or login modal (static)
+5) Favicon wiring
+6) README with run instructions
+
+Build it now.
