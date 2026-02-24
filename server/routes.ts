@@ -1,6 +1,14 @@
 import type { Express } from "express";
+import session from "express-session";
+import connectPgSimple from "connect-pg-simple";
+import bcrypt from "bcrypt";
 import fs from "fs";
 import path from "path";
+import { storage } from "./storage";
+import { pool } from "./db";
+import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "../shared/schema";
+
+const PgSession = connectPgSimple(session);
 
 export async function registerRoutes(app: Express): Promise<void> {
   // Docs routes are registered first — they don't require a database
@@ -52,27 +60,6 @@ export async function registerRoutes(app: Express): Promise<void> {
   // When DATABASE_URL is not configured (e.g., docs-only Vercel deployment),
   // only the docs routes above are available.
   if (!process.env.DATABASE_URL) return;
-
-  // Dynamically import database/auth modules so they are never loaded
-  // on docs-only deployments. This avoids native module (bcrypt) and
-  // database connection issues in serverless environments without a DB.
-  const [
-    { default: session },
-    { default: connectPgSimple },
-    { default: bcrypt },
-    { storage },
-    { pool },
-    { insertUserSchema, insertPolicySchema, insertPolicyRunSchema },
-  ] = await Promise.all([
-    import("express-session"),
-    import("connect-pg-simple"),
-    import("bcrypt"),
-    import("./storage"),
-    import("./db"),
-    import("../shared/schema"),
-  ]);
-
-  const PgSession = connectPgSimple(session);
 
   app.use(
     session({

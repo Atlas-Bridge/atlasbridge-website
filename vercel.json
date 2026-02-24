@@ -2,7 +2,7 @@
   "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/index.ts": {
+    "api/index.js": {
       "includeFiles": "docs/**",
       "maxDuration": 30
     }

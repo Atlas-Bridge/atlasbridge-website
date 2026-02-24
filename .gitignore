@@ -10,4 +10,5 @@ playwright-report/
 blob-report/
 coverage/
 .vercel
+api/index.js
 .env*.local

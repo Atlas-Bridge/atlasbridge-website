@@ -4,7 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default tseslint.config(
-  { ignores: ["dist/", "node_modules/", "*.cjs", "generate-logos.js"] },
+  { ignores: ["dist/", "node_modules/", "*.cjs", "generate-logos.js", "api/index.js"] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
