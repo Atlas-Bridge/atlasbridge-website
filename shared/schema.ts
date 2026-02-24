@@ -4,17 +4,23 @@ import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
 export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: varchar("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
   role: text("role").notNull().default("viewer"),
 });
 
 export const policies = pgTable("policies", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: varchar("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   description: text("description"),
-  rules: jsonb("rules").notNull().default(sql`'[]'::jsonb`),
+  rules: jsonb("rules")
+    .notNull()
+    .default(sql`'[]'::jsonb`),
   enforcement: text("enforcement").notNull().default("strict"),
   enabled: boolean("enabled").notNull().default(true),
   createdBy: varchar("created_by").references(() => users.id),
@@ -22,7 +28,9 @@ export const policies = pgTable("policies", {
 });
 
 export const policyRuns = pgTable("policy_runs", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: varchar("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   policyId: varchar("policy_id").references(() => policies.id),
   agent: text("agent").notNull(),
   command: text("command").notNull(),
@@ -33,7 +41,9 @@ export const policyRuns = pgTable("policy_runs", {
 });
 
 export const auditLogs = pgTable("audit_logs", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: varchar("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   action: text("action").notNull(),
   actor: text("actor").notNull(),
   target: text("target"),

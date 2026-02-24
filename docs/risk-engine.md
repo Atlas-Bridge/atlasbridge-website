@@ -12,12 +12,12 @@ Risk scores are not predictions or probabilistic estimates. They are determinist
 
 Every evaluated command receives a numeric risk score from 0 to 100:
 
-| Range   | Level      | Description                                       |
-|---------|------------|---------------------------------------------------|
-| 0–25    | `low`      | Read-only or informational commands               |
-| 26–50   | `medium`   | Modifications with limited scope                  |
-| 51–75   | `high`     | Destructive or broadly scoped modifications       |
-| 76–100  | `critical` | System-level changes, irreversible operations     |
+| Range  | Level      | Description                                   |
+| ------ | ---------- | --------------------------------------------- |
+| 0–25   | `low`      | Read-only or informational commands           |
+| 26–50  | `medium`   | Modifications with limited scope              |
+| 51–75  | `high`     | Destructive or broadly scoped modifications   |
+| 76–100 | `critical` | System-level changes, irreversible operations |
 
 ## Classification Factors
 
@@ -27,40 +27,40 @@ The risk engine evaluates multiple factors to produce a score. Each factor contr
 
 Commands are classified by their operation type:
 
-| Category         | Examples                        | Base Risk |
-|------------------|---------------------------------|-----------|
-| Read             | `ls`, `cat`, `grep`, `find`     | 5         |
-| Write            | `echo > file`, `cp`, `mv`      | 30        |
-| Delete           | `rm`, `rm -r`                   | 55        |
-| System modify    | `chmod`, `chown`, `mount`       | 60        |
-| Package manage   | `apt install`, `npm install`    | 45        |
-| Network          | `curl -X POST`, `wget`         | 40        |
-| Process control  | `kill`, `systemctl stop`        | 65        |
-| Destructive      | `rm -rf /`, `dd if=/dev/zero`   | 95        |
+| Category        | Examples                      | Base Risk |
+| --------------- | ----------------------------- | --------- |
+| Read            | `ls`, `cat`, `grep`, `find`   | 5         |
+| Write           | `echo > file`, `cp`, `mv`     | 30        |
+| Delete          | `rm`, `rm -r`                 | 55        |
+| System modify   | `chmod`, `chown`, `mount`     | 60        |
+| Package manage  | `apt install`, `npm install`  | 45        |
+| Network         | `curl -X POST`, `wget`        | 40        |
+| Process control | `kill`, `systemctl stop`      | 65        |
+| Destructive     | `rm -rf /`, `dd if=/dev/zero` | 95        |
 
 ### Directory Sensitivity
 
 The target path of a command modifies the risk score:
 
-| Directory          | Modifier | Rationale                            |
-|--------------------|----------|--------------------------------------|
-| `/tmp`, `/var/tmp` | -10      | Temporary, expected to be ephemeral  |
-| User home          | +0       | Standard working directory           |
-| `/etc`             | +20      | System configuration                 |
-| `/usr`, `/bin`     | +25      | System binaries                      |
-| `/`                | +30      | Root filesystem                      |
-| `/boot`, `/proc`   | +35      | Critical system paths                |
+| Directory          | Modifier | Rationale                           |
+| ------------------ | -------- | ----------------------------------- |
+| `/tmp`, `/var/tmp` | -10      | Temporary, expected to be ephemeral |
+| User home          | +0       | Standard working directory          |
+| `/etc`             | +20      | System configuration                |
+| `/usr`, `/bin`     | +25      | System binaries                     |
+| `/`                | +30      | Root filesystem                     |
+| `/boot`, `/proc`   | +35      | Critical system paths               |
 
 ### Environment Tags
 
 The execution environment can further adjust the risk assessment:
 
-| Tag           | Modifier | Description                                |
-|---------------|----------|--------------------------------------------|
-| `development` | -10      | Local development environment              |
-| `staging`     | +0       | Pre-production environment                 |
-| `production`  | +15      | Live production environment                |
-| `critical`    | +25      | Designated critical infrastructure         |
+| Tag           | Modifier | Description                        |
+| ------------- | -------- | ---------------------------------- |
+| `development` | -10      | Local development environment      |
+| `staging`     | +0       | Pre-production environment         |
+| `production`  | +15      | Live production environment        |
+| `critical`    | +25      | Designated critical infrastructure |
 
 ## Score Calculation
 
@@ -88,10 +88,10 @@ Total:       90  (critical)
 Risk thresholds determine how the system responds to different risk levels. These interact with the current [autonomy mode](autonomy-modes.md):
 
 | Autonomy Mode | Low (0–25) | Medium (26–50) | High (51–75) | Critical (76–100) |
-|----------------|------------|-----------------|---------------|---------------------|
-| OFF            | Deny all   | Deny all        | Deny all      | Deny all            |
-| ASSIST         | Allow      | Escalate        | Escalate      | Deny                |
-| FULL           | Allow      | Allow           | Escalate      | Deny                |
+| ------------- | ---------- | -------------- | ------------ | ----------------- |
+| OFF           | Deny all   | Deny all       | Deny all     | Deny all          |
+| ASSIST        | Allow      | Escalate       | Escalate     | Deny              |
+| FULL          | Allow      | Allow          | Escalate     | Deny              |
 
 ## Risk Override Logic
 

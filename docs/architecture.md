@@ -196,6 +196,7 @@ The replay system is on the pre-GA roadmap. See [Replay](./replay.md) for the pl
 Cloud observe mode provides read-only visibility into governance activity without granting any execution capability. When enabled, the local runtime streams telemetry (evaluation results, risk scores, audit events) to a cloud dashboard.
 
 The cloud component cannot:
+
 - Initiate or modify command execution
 - Change policy definitions
 - Override escalation decisions

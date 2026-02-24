@@ -1,5 +1,5 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
+import type { Server } from "http";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import bcrypt from "bcrypt";
@@ -11,10 +11,7 @@ import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "@sh
 
 const PgSession = connectPgSimple(session);
 
-export async function registerRoutes(
-  httpServer: Server,
-  app: Express
-): Promise<Server> {
+export async function registerRoutes(httpServer: Server, app: Express): Promise<Server> {
   app.use(
     session({
       store: new PgSession({
@@ -31,7 +28,7 @@ export async function registerRoutes(
         secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
       },
-    })
+    }),
   );
 
   app.post("/api/auth/register", async (req, res) => {
@@ -233,10 +230,16 @@ export async function registerRoutes(
   app.get("/api/docs", (_req, res) => {
     const docsDir = path.resolve(process.cwd(), "docs");
     try {
-      const files = fs.readdirSync(docsDir).filter(f => f.endsWith(".md")).sort();
-      const docs = files.map(f => ({
+      const files = fs
+        .readdirSync(docsDir)
+        .filter((f) => f.endsWith(".md"))
+        .sort();
+      const docs = files.map((f) => ({
         slug: f.replace(".md", ""),
-        title: f.replace(".md", "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
+        title: f
+          .replace(".md", "")
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase()),
       }));
       res.json(docs);
     } catch {

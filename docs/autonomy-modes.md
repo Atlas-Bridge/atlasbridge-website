@@ -4,17 +4,18 @@ AtlasBridge operates in one of three autonomy modes that determine how much inde
 
 ## Mode Summary
 
-| Mode     | Agent Authority          | Human Involvement              |
-|----------|--------------------------|--------------------------------|
-| `OFF`    | No autonomous execution  | All commands require approval  |
-| `ASSIST` | Low-risk commands only   | Medium and above escalated     |
-| `FULL`   | Low and medium commands  | High-risk escalated, critical denied |
+| Mode     | Agent Authority         | Human Involvement                    |
+| -------- | ----------------------- | ------------------------------------ |
+| `OFF`    | No autonomous execution | All commands require approval        |
+| `ASSIST` | Low-risk commands only  | Medium and above escalated           |
+| `FULL`   | Low and medium commands | High-risk escalated, critical denied |
 
 ## OFF Mode
 
 In `OFF` mode, the agent has no autonomous execution capability. Every command submitted by the agent is held for human review, regardless of risk score or policy evaluation.
 
 **Behavior:**
+
 - All commands are queued for human approval.
 - No command executes without explicit human authorization.
 - Policy evaluation still runs; results are logged but not acted upon.
@@ -45,6 +46,7 @@ Agent submits command
 In `ASSIST` mode, the agent can autonomously execute commands classified as low risk (score 0–25). All other commands are escalated for human review.
 
 **Behavior:**
+
 - Low-risk commands (0–25): Executed automatically if permitted by policy.
 - Medium-risk commands (26–50): Escalated for human approval.
 - High-risk commands (51–75): Escalated for human approval.
@@ -76,6 +78,7 @@ Agent submits command
 In `FULL` mode, the agent can autonomously execute commands classified as low or medium risk. High-risk commands are escalated, and critical-risk commands are denied.
 
 **Behavior:**
+
 - Low-risk commands (0–25): Executed automatically if permitted by policy.
 - Medium-risk commands (26–50): Executed automatically if permitted by policy.
 - High-risk commands (51–75): Escalated for human approval.
@@ -131,15 +134,15 @@ Command
 
 Escalation occurs when a command falls into a risk range that the current autonomy mode does not permit for autonomous execution. The specific triggers are:
 
-| Condition                                    | Result    |
-|----------------------------------------------|-----------|
-| OFF mode, any command                        | Escalate  |
-| ASSIST mode, risk score > 25                 | Escalate  |
-| ASSIST mode, risk score > 75                 | Deny      |
-| FULL mode, risk score > 50                   | Escalate  |
-| FULL mode, risk score > 75                   | Deny      |
-| Any mode, policy rule returns `escalate`     | Escalate  |
-| Any mode, policy rule returns `deny`         | Deny      |
+| Condition                                | Result   |
+| ---------------------------------------- | -------- |
+| OFF mode, any command                    | Escalate |
+| ASSIST mode, risk score > 25             | Escalate |
+| ASSIST mode, risk score > 75             | Deny     |
+| FULL mode, risk score > 50               | Escalate |
+| FULL mode, risk score > 75               | Deny     |
+| Any mode, policy rule returns `escalate` | Escalate |
+| Any mode, policy rule returns `deny`     | Deny     |
 
 For details on the escalation workflow, see [Escalation](escalation.md).
 

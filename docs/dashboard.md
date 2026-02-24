@@ -82,13 +82,13 @@ The audit log page displays a complete, chronological record of all governance a
 
 The audit log is presented as a table with the following columns:
 
-| Column | Description |
-|--------|-------------|
-| Timestamp | ISO 8601 timestamp of when the event occurred, displayed in local time. |
-| Action | The governance action (e.g., `user.register`, `policy.create`, `policy.run.allow`, `policy.delete`). |
-| Actor | The user or agent that performed the action. |
-| Target | The resource affected by the action (policy ID, user ID, or similar identifier). |
-| Level | Severity indicator: green (info), amber (warn), red (error). |
+| Column    | Description                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------- |
+| Timestamp | ISO 8601 timestamp of when the event occurred, displayed in local time.                              |
+| Action    | The governance action (e.g., `user.register`, `policy.create`, `policy.run.allow`, `policy.delete`). |
+| Actor     | The user or agent that performed the action.                                                         |
+| Target    | The resource affected by the action (policy ID, user ID, or similar identifier).                     |
+| Level     | Severity indicator: green (info), amber (warn), red (error).                                         |
 
 ### CSV Export
 

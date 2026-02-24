@@ -4,13 +4,13 @@ AtlasBridge provides a command-line interface for initializing workspaces, runni
 
 ## Global Options
 
-| Flag | Description |
-|------|-------------|
-| `--config <path>` | Path to configuration file. Defaults to `./atlasbridge.yaml`. |
-| `--verbose` | Enable verbose output for debugging. |
-| `--quiet` | Suppress non-essential output. |
-| `--format <json\|text>` | Output format. Defaults to `text`. |
-| `--no-color` | Disable colored terminal output. |
+| Flag                    | Description                                                   |
+| ----------------------- | ------------------------------------------------------------- |
+| `--config <path>`       | Path to configuration file. Defaults to `./atlasbridge.yaml`. |
+| `--verbose`             | Enable verbose output for debugging.                          |
+| `--quiet`               | Suppress non-essential output.                                |
+| `--format <json\|text>` | Output format. Defaults to `text`.                            |
+| `--no-color`            | Disable colored terminal output.                              |
 
 ## Commands
 
@@ -24,9 +24,9 @@ atlasbridge init [--dir <path>]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
-| `--dir <path>` | Target directory. Defaults to current working directory. |
+| Flag                | Description                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------- |
+| `--dir <path>`      | Target directory. Defaults to current working directory.                                    |
 | `--template <name>` | Use a predefined policy template (`minimal`, `standard`, `strict`). Defaults to `standard`. |
 
 **Example:**
@@ -51,13 +51,13 @@ atlasbridge run <command> [flags]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
-| `--agent <name>` | Identifier for the agent submitting the command. Required. |
-| `--policy <id>` | Evaluate against a specific policy only. Optional. |
-| `--env <key=value>` | Set environment tags for risk evaluation. Repeatable. |
-| `--dry-run` | Evaluate without recording the result or enforcing the decision. |
-| `--timeout <ms>` | Maximum evaluation time in milliseconds. Defaults to `5000`. |
+| Flag                | Description                                                      |
+| ------------------- | ---------------------------------------------------------------- |
+| `--agent <name>`    | Identifier for the agent submitting the command. Required.       |
+| `--policy <id>`     | Evaluate against a specific policy only. Optional.               |
+| `--env <key=value>` | Set environment tags for risk evaluation. Repeatable.            |
+| `--dry-run`         | Evaluate without recording the result or enforcing the decision. |
+| `--timeout <ms>`    | Maximum evaluation time in milliseconds. Defaults to `5000`.     |
 
 **Example:**
 
@@ -99,10 +99,10 @@ atlasbridge policy list [flags]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
-| `--enabled` | Show only enabled policies. |
-| `--disabled` | Show only disabled policies. |
+| Flag                   | Description                                                |
+| ---------------------- | ---------------------------------------------------------- |
+| `--enabled`            | Show only enabled policies.                                |
+| `--disabled`           | Show only disabled policies.                               |
 | `--enforcement <mode>` | Filter by enforcement mode (`strict`, `warn`, `escalate`). |
 
 **Example:**
@@ -121,12 +121,12 @@ atlasbridge policy test <policy-file> [flags]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
-| `--input <file>` | Path to a test case file (YAML or JSON). |
-| `--command <cmd>` | Single command to test. Repeatable. |
-| `--agent <name>` | Agent identifier for test context. Defaults to `test-agent`. |
-| `--fail-on-deny` | Exit with non-zero status if any test case is denied. Useful for CI. |
+| Flag              | Description                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| `--input <file>`  | Path to a test case file (YAML or JSON).                             |
+| `--command <cmd>` | Single command to test. Repeatable.                                  |
+| `--agent <name>`  | Agent identifier for test context. Defaults to `test-agent`.         |
+| `--fail-on-deny`  | Exit with non-zero status if any test case is denied. Useful for CI. |
 
 **Example:**
 
@@ -198,14 +198,14 @@ atlasbridge audit [flags]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
-| `--limit <n>` | Number of entries to return. Defaults to `50`. |
-| `--level <level>` | Filter by log level (`info`, `warn`, `error`). |
-| `--action <pattern>` | Filter by action pattern (supports glob matching). |
-| `--agent <name>` | Filter by agent identifier. |
-| `--since <timestamp>` | Show entries after the given ISO 8601 timestamp. |
-| `--export <format>` | Export results as `csv` or `json`. |
+| Flag                  | Description                                        |
+| --------------------- | -------------------------------------------------- |
+| `--limit <n>`         | Number of entries to return. Defaults to `50`.     |
+| `--level <level>`     | Filter by log level (`info`, `warn`, `error`).     |
+| `--action <pattern>`  | Filter by action pattern (supports glob matching). |
+| `--agent <name>`      | Filter by agent identifier.                        |
+| `--since <timestamp>` | Show entries after the given ISO 8601 timestamp.   |
+| `--export <format>`   | Export results as `csv` or `json`.                 |
 
 **Example:**
 
@@ -223,10 +223,10 @@ atlasbridge audit verify [flags]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
+| Flag          | Description                                  |
+| ------------- | -------------------------------------------- |
 | `--from <id>` | Start verification from a specific entry ID. |
-| `--to <id>` | End verification at a specific entry ID. |
+| `--to <id>`   | End verification at a specific entry ID.     |
 
 **Example:**
 
@@ -255,11 +255,11 @@ atlasbridge replay <session-id> [flags]
 
 **Flags:**
 
-| Flag | Description |
-|------|-------------|
+| Flag                         | Description                                                     |
+| ---------------------------- | --------------------------------------------------------------- |
 | `--policy-version <version>` | Replay using a specific policy version instead of the original. |
-| `--output <file>` | Write replay results to a file. |
-| `--diff` | Show differences between original and replayed decisions. |
+| `--output <file>`            | Write replay results to a file.                                 |
+| `--diff`                     | Show differences between original and replayed decisions.       |
 
 **Example:**
 
@@ -288,22 +288,22 @@ Cloud Observe: connected (read-only)
 
 ## Exit Codes
 
-| Code | Meaning |
-|------|---------|
-| `0` | Command completed successfully. |
-| `1` | General error (invalid input, missing configuration). |
-| `2` | Policy evaluation resulted in `deny` (when `--fail-on-deny` is set). |
-| `3` | Policy evaluation resulted in `escalate` and no human approval was received. |
-| `10` | Audit log integrity verification failed. |
+| Code | Meaning                                                                      |
+| ---- | ---------------------------------------------------------------------------- |
+| `0`  | Command completed successfully.                                              |
+| `1`  | General error (invalid input, missing configuration).                        |
+| `2`  | Policy evaluation resulted in `deny` (when `--fail-on-deny` is set).         |
+| `3`  | Policy evaluation resulted in `escalate` and no human approval was received. |
+| `10` | Audit log integrity verification failed.                                     |
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `ATLASBRIDGE_CONFIG` | Path to configuration file. Overrides `--config` flag. |
+| Variable                | Description                                                               |
+| ----------------------- | ------------------------------------------------------------------------- |
+| `ATLASBRIDGE_CONFIG`    | Path to configuration file. Overrides `--config` flag.                    |
 | `ATLASBRIDGE_LOG_LEVEL` | Logging verbosity (`debug`, `info`, `warn`, `error`). Defaults to `info`. |
-| `ATLASBRIDGE_AUDIT_DIR` | Directory for audit log storage. Overrides config value. |
-| `DATABASE_URL` | PostgreSQL connection string for persistent storage. |
+| `ATLASBRIDGE_AUDIT_DIR` | Directory for audit log storage. Overrides config value.                  |
+| `DATABASE_URL`          | PostgreSQL connection string for persistent storage.                      |
 
 ## See Also
 

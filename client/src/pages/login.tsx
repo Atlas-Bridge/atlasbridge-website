@@ -49,7 +49,10 @@ export default function Login() {
     <div className="min-h-screen bg-[#071D2B] flex items-center justify-center p-4 font-sans">
       <div className="absolute inset-0 bg-gradient-to-br from-[#071D2B] to-[#0B2A3C] opacity-50" />
       <div className="relative w-full max-w-md">
-        <Link href="/" className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors"
+        >
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Landing Page</span>
         </Link>
@@ -61,35 +64,53 @@ export default function Login() {
             </div>
             <CardTitle className="text-2xl font-bold text-[#0B2A3C]">AtlasBridge Console</CardTitle>
             <CardDescription className="text-[#6E7A86]">
-              {isRegister ? "Create your account to access the governance console" : "Sign in to the governance console"}
+              {isRegister
+                ? "Create your account to access the governance console"
+                : "Sign in to the governance console"}
             </CardDescription>
           </CardHeader>
           <CardContent className="px-8 pb-10 space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="username" className="text-[#0B2A3C] font-semibold">Username</Label>
+                <Label htmlFor="username" className="text-[#0B2A3C] font-semibold">
+                  Username
+                </Label>
                 <Input
-                  id="username" type="text" value={username}
+                  id="username"
+                  type="text"
+                  value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="your-username"
                   className="bg-[#F5F7F9] border-0 focus-visible:ring-[#1F8A8C]"
-                  required data-testid="input-username"
+                  required
+                  data-testid="input-username"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-[#0B2A3C] font-semibold">Password</Label>
+                <Label htmlFor="password" className="text-[#0B2A3C] font-semibold">
+                  Password
+                </Label>
                 <Input
-                  id="password" type="password" value={password}
+                  id="password"
+                  type="password"
+                  value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-[#F5F7F9] border-0 focus-visible:ring-[#1F8A8C]"
-                  required data-testid="input-password"
+                  required
+                  data-testid="input-password"
                 />
               </div>
               {error && (
-                <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg" data-testid="text-error">{error}</p>
+                <p
+                  className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg"
+                  data-testid="text-error"
+                >
+                  {error}
+                </p>
               )}
               <Button
-                type="submit" disabled={isPending}
+                type="submit"
+                disabled={isPending}
                 className="w-full bg-[#0B2A3C] hover:bg-[#071D2B] text-white h-12 rounded-xl text-base font-bold shadow-lg shadow-[#0B2A3C]/20"
                 data-testid="button-submit"
               >
@@ -100,7 +121,10 @@ export default function Login() {
               <p className="text-sm text-[#6E7A86]">
                 {isRegister ? "Already have an account?" : "Don't have an account?"}{" "}
                 <button
-                  onClick={() => { setIsRegister(!isRegister); setError(""); }}
+                  onClick={() => {
+                    setIsRegister(!isRegister);
+                    setError("");
+                  }}
                   className="text-[#1F8A8C] font-bold hover:underline"
                   data-testid="button-toggle-mode"
                 >
@@ -110,7 +134,9 @@ export default function Login() {
             </div>
             <div className="pt-4 border-t flex gap-4 justify-center grayscale opacity-50">
               <img src="/favicons/favicon-32.png" className="h-4 w-4" alt="AtlasBridge" />
-              <span className="text-[10px] text-[#6E7A86] uppercase tracking-[0.2em] font-bold">Secure Local Boundary Enabled</span>
+              <span className="text-[10px] text-[#6E7A86] uppercase tracking-[0.2em] font-bold">
+                Secure Local Boundary Enabled
+              </span>
             </div>
           </CardContent>
         </Card>

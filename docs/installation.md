@@ -56,16 +56,16 @@ AtlasBridge reads configuration from environment variables and an optional `.atl
 
 ### Environment Variables
 
-| Variable | Required | Description |
-|---|---|---|
-| `ATLASBRIDGE_POLICY_DIR` | No | Path to the directory containing policy YAML files. Defaults to `./policies`. |
-| `ATLASBRIDGE_LOG_DIR` | No | Path to the directory where audit logs are written. Defaults to `./logs`. |
-| `ATLASBRIDGE_MODE` | No | Default autonomy mode: `off`, `assist`, or `full`. Defaults to `assist`. |
-| `DATABASE_URL` | Yes | PostgreSQL connection string for audit log persistence. |
-| `ATLASBRIDGE_CHANNEL` | No | Escalation channel type: `telegram`, `slack`, or `stdout`. Defaults to `stdout`. |
-| `TELEGRAM_BOT_TOKEN` | Conditional | Required when `ATLASBRIDGE_CHANNEL=telegram`. |
-| `TELEGRAM_CHAT_ID` | Conditional | Required when `ATLASBRIDGE_CHANNEL=telegram`. |
-| `SLACK_WEBHOOK_URL` | Conditional | Required when `ATLASBRIDGE_CHANNEL=slack`. |
+| Variable                 | Required    | Description                                                                      |
+| ------------------------ | ----------- | -------------------------------------------------------------------------------- |
+| `ATLASBRIDGE_POLICY_DIR` | No          | Path to the directory containing policy YAML files. Defaults to `./policies`.    |
+| `ATLASBRIDGE_LOG_DIR`    | No          | Path to the directory where audit logs are written. Defaults to `./logs`.        |
+| `ATLASBRIDGE_MODE`       | No          | Default autonomy mode: `off`, `assist`, or `full`. Defaults to `assist`.         |
+| `DATABASE_URL`           | Yes         | PostgreSQL connection string for audit log persistence.                          |
+| `ATLASBRIDGE_CHANNEL`    | No          | Escalation channel type: `telegram`, `slack`, or `stdout`. Defaults to `stdout`. |
+| `TELEGRAM_BOT_TOKEN`     | Conditional | Required when `ATLASBRIDGE_CHANNEL=telegram`.                                    |
+| `TELEGRAM_CHAT_ID`       | Conditional | Required when `ATLASBRIDGE_CHANNEL=telegram`.                                    |
+| `SLACK_WEBHOOK_URL`      | Conditional | Required when `ATLASBRIDGE_CHANNEL=slack`.                                       |
 
 ### Configuration File
 

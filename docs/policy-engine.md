@@ -12,13 +12,13 @@ The AtlasBridge policy engine is a deterministic rule evaluation system that gov
 
 A policy is a named collection of rules with an enforcement mode. Each policy contains:
 
-| Field         | Type     | Description                                      |
-|---------------|----------|--------------------------------------------------|
-| `name`        | string   | Human-readable policy identifier                 |
-| `description` | string   | Optional explanation of the policy's purpose      |
-| `rules`       | array    | Ordered list of rule objects                      |
-| `enforcement` | string   | One of `strict`, `warn`, or `escalate`            |
-| `enabled`     | boolean  | Whether the policy is active during evaluation    |
+| Field         | Type    | Description                                    |
+| ------------- | ------- | ---------------------------------------------- |
+| `name`        | string  | Human-readable policy identifier               |
+| `description` | string  | Optional explanation of the policy's purpose   |
+| `rules`       | array   | Ordered list of rule objects                   |
+| `enforcement` | string  | One of `strict`, `warn`, or `escalate`         |
+| `enabled`     | boolean | Whether the policy is active during evaluation |
 
 ## Rule Definition
 
@@ -55,12 +55,12 @@ rules:
 
 ### Rule Fields
 
-| Field            | Type   | Description                                              |
-|------------------|--------|----------------------------------------------------------|
-| `match.command`  | string | Exact command string to match                            |
-| `match.command_pattern` | string | Glob or pattern-based match against the command   |
-| `action`         | string | One of `allow`, `deny`, `warn`, or `escalate`            |
-| `reason`         | string | Human-readable explanation for the decision              |
+| Field                   | Type   | Description                                     |
+| ----------------------- | ------ | ----------------------------------------------- |
+| `match.command`         | string | Exact command string to match                   |
+| `match.command_pattern` | string | Glob or pattern-based match against the command |
+| `action`                | string | One of `allow`, `deny`, `warn`, or `escalate`   |
+| `reason`                | string | Human-readable explanation for the decision     |
 
 ## Evaluation Order
 
