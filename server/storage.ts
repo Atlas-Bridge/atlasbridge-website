@@ -13,7 +13,7 @@ import {
   type InsertPolicyRun,
   type AuditLog,
   type InsertAuditLog,
-} from "@shared/schema";
+} from "../shared/schema";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;

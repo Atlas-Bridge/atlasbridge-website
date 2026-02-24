@@ -6,7 +6,7 @@ import fs from "fs";
 import path from "path";
 import { storage } from "./storage";
 import { pool } from "./db";
-import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "@shared/schema";
+import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "../shared/schema";
 
 const PgSession = connectPgSimple(session);
 

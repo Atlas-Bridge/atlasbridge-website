@@ -2,12 +2,12 @@
   "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/index.mjs": {
+    "api/index.ts": {
       "includeFiles": "docs/**",
       "maxDuration": 30
     }
   },
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index.mjs" }],
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
   "headers": [
     {
       "source": "/assets/(.*)",

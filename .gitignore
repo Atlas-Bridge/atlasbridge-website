@@ -10,4 +10,4 @@ playwright-report/
 blob-report/
 coverage/
 .vercel
-api/
+.env*.local
