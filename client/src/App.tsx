@@ -19,7 +19,7 @@ const SecurityPage = lazy(() => import("./pages/security-page"));
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-pulse text-[#6E7A86]">Loading...</div>
+      <div className="animate-pulse text-[#64707C]">Loading...</div>
     </div>
   );
 }

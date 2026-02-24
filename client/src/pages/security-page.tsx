@@ -8,7 +8,7 @@ export default function SecurityPage() {
       <nav className="bg-[#0B2A3C] border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 lg:px-6 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-[#1F8A8C]" />
+            <ShieldCheck className="h-5 w-5 text-[#157173]" />
             <span className="text-white font-bold">AtlasBridge</span>
           </Link>
           <Link href="/">
@@ -32,7 +32,7 @@ export default function SecurityPage() {
         >
           Security
         </h1>
-        <p className="text-sm text-[#6E7A86] mb-10">Last updated: June 2025</p>
+        <p className="text-sm text-[#64707C] mb-10">Last updated: June 2025</p>
 
         <div className="space-y-8 text-[#0B2A3C]/80 leading-[1.85] text-[15px] sm:text-base">
           <section>
@@ -43,22 +43,22 @@ export default function SecurityPage() {
               minimizing the attack surface associated with remote execution.
             </p>
             <ul className="mt-4 space-y-2 ml-1">
-              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                 <strong className="text-[#0B2A3C]">Local-first execution:</strong> All agent actions
                 are executed locally. No code or commands are sent to external servers for execution
                 unless explicitly configured.
               </li>
-              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                 <strong className="text-[#0B2A3C]">Deterministic policy evaluation:</strong>{" "}
                 Policies are evaluated using deterministic logic, producing consistent and
                 predictable outcomes for the same inputs.
               </li>
-              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                 <strong className="text-[#0B2A3C]">Audit trail:</strong> All decisions and actions
                 are designed to be logged in an append-only format to support auditability and
                 forensic review when configured.
               </li>
-              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+              <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                 <strong className="text-[#0B2A3C]">Least privilege:</strong> The runtime operates
                 with the minimum permissions necessary and enforces policy boundaries on agent
                 capabilities.
@@ -96,24 +96,24 @@ export default function SecurityPage() {
             <div className="mt-4 p-4 rounded-xl bg-[#0B2A3C]/[0.04] border border-[#0B2A3C]/10">
               <p className="font-semibold text-[#0B2A3C] mb-2">To report a vulnerability:</p>
               <ul className="space-y-1.5 ml-1">
-                <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+                <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                   Open a private security advisory on the{" "}
                   <a
                     href="https://github.com/Atlas-Bridge"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1F8A8C] font-medium hover:underline"
+                    className="text-[#157173] font-medium hover:underline"
                     data-testid="link-github-security"
                   >
                     AtlasBridge GitHub repository
                   </a>
                   .
                 </li>
-                <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+                <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                   Include a description of the vulnerability, steps to reproduce, and any potential
                   impact.
                 </li>
-                <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold">
+                <li className="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold">
                   Allow reasonable time for the issue to be investigated and resolved before any
                   public disclosure.
                 </li>

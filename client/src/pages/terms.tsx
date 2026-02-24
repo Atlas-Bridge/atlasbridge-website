@@ -8,7 +8,7 @@ export default function Terms() {
       <nav className="bg-[#0B2A3C] border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 lg:px-6 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-[#1F8A8C]" />
+            <ShieldCheck className="h-5 w-5 text-[#157173]" />
             <span className="text-white font-bold">AtlasBridge</span>
           </Link>
           <Link href="/">
@@ -32,7 +32,7 @@ export default function Terms() {
         >
           Terms of Use
         </h1>
-        <p className="text-sm text-[#6E7A86] mb-10">Last updated: June 2025</p>
+        <p className="text-sm text-[#64707C] mb-10">Last updated: June 2025</p>
 
         <div className="space-y-8 text-[#0B2A3C]/80 leading-[1.85] text-[15px] sm:text-base">
           <section>
@@ -124,7 +124,7 @@ export default function Terms() {
                 href="https://github.com/Atlas-Bridge"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#1F8A8C] font-medium hover:underline"
+                className="text-[#157173] font-medium hover:underline"
                 data-testid="link-github-terms"
               >
                 AtlasBridge GitHub repository

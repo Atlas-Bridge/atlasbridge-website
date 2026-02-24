@@ -47,7 +47,7 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4 sm:gap-8">
             <Link href="/dashboard" className="flex items-center gap-2">
-              <ShieldCheck className="h-6 w-6 text-[#1F8A8C]" />
+              <ShieldCheck className="h-6 w-6 text-[#157173]" />
               <span className="text-white font-bold text-lg hidden sm:inline">AtlasBridge</span>
             </Link>
             <div className="hidden md:flex items-center gap-1">
@@ -150,7 +150,7 @@ export default function Dashboard() {
           >
             Governance Dashboard
           </h1>
-          <p className="text-[#6E7A86] mt-1 text-sm sm:text-base">
+          <p className="text-[#64707C] mt-1 text-sm sm:text-base">
             Monitor policy enforcement and agent activity
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function Dashboard() {
               <CardContent className="pt-4 sm:pt-6 pb-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs sm:text-sm text-[#6E7A86]">Active Policies</p>
+                    <p className="text-xs sm:text-sm text-[#64707C]">Active Policies</p>
                     <p
                       className="text-2xl sm:text-3xl font-bold text-[#0B2A3C]"
                       data-testid="stat-active-policies"
@@ -178,10 +178,10 @@ export default function Dashboard() {
                     </p>
                   </div>
                   <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-[#1F8A8C]/10 flex items-center justify-center">
-                    <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-[#1F8A8C]" />
+                    <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-[#157173]" />
                   </div>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#6E7A86] mt-2">
+                <p className="text-[10px] sm:text-xs text-[#64707C] mt-2">
                   {stats?.totalPolicies ?? 0} total
                 </p>
               </CardContent>
@@ -191,7 +191,7 @@ export default function Dashboard() {
               <CardContent className="pt-4 sm:pt-6 pb-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs sm:text-sm text-[#6E7A86]">Total Runs</p>
+                    <p className="text-xs sm:text-sm text-[#64707C]">Total Runs</p>
                     <p
                       className="text-2xl sm:text-3xl font-bold text-[#0B2A3C]"
                       data-testid="stat-total-runs"
@@ -203,7 +203,7 @@ export default function Dashboard() {
                     <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-blue-500" />
                   </div>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#6E7A86] mt-2">Evaluations</p>
+                <p className="text-[10px] sm:text-xs text-[#64707C] mt-2">Evaluations</p>
               </CardContent>
             </Card>
 
@@ -211,7 +211,7 @@ export default function Dashboard() {
               <CardContent className="pt-4 sm:pt-6 pb-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs sm:text-sm text-[#6E7A86]">Allowed</p>
+                    <p className="text-xs sm:text-sm text-[#64707C]">Allowed</p>
                     <p
                       className="text-2xl sm:text-3xl font-bold text-emerald-600"
                       data-testid="stat-allowed"
@@ -223,7 +223,7 @@ export default function Dashboard() {
                     <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-500" />
                   </div>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#6E7A86] mt-2">Passed checks</p>
+                <p className="text-[10px] sm:text-xs text-[#64707C] mt-2">Passed checks</p>
               </CardContent>
             </Card>
 
@@ -231,7 +231,7 @@ export default function Dashboard() {
               <CardContent className="pt-4 sm:pt-6 pb-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs sm:text-sm text-[#6E7A86]">Denied / Escalated</p>
+                    <p className="text-xs sm:text-sm text-[#64707C]">Denied / Escalated</p>
                     <p
                       className="text-2xl sm:text-3xl font-bold text-amber-600"
                       data-testid="stat-denied"
@@ -243,7 +243,7 @@ export default function Dashboard() {
                     <ShieldX className="h-5 w-5 sm:h-6 sm:w-6 text-amber-500" />
                   </div>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#6E7A86] mt-2">
+                <p className="text-[10px] sm:text-xs text-[#64707C] mt-2">
                   {stats?.deniedRuns ?? 0}d / {stats?.escalatedRuns ?? 0}e
                 </p>
               </CardContent>
@@ -261,7 +261,7 @@ export default function Dashboard() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-[#1F8A8C] text-xs sm:text-sm"
+                  className="text-[#157173] text-xs sm:text-sm"
                   data-testid="link-view-all-runs"
                 >
                   View all <ChevronRight className="h-4 w-4 ml-1" />
@@ -270,7 +270,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               {!recentRuns || recentRuns.length === 0 ? (
-                <div className="text-center py-8 text-[#6E7A86]">
+                <div className="text-center py-8 text-[#64707C]">
                   <Activity className="h-8 w-8 mx-auto mb-2 opacity-40" />
                   <p className="text-sm">No policy runs yet</p>
                   <p className="text-xs mt-1">Runs will appear here when agents are evaluated</p>
@@ -294,7 +294,7 @@ export default function Dashboard() {
                         <p className="text-xs sm:text-sm font-medium text-[#0B2A3C] truncate">
                           {run.command}
                         </p>
-                        <p className="text-[10px] sm:text-xs text-[#6E7A86]">
+                        <p className="text-[10px] sm:text-xs text-[#64707C]">
                           {run.agent} · {run.duration}ms
                         </p>
                       </div>
@@ -325,7 +325,7 @@ export default function Dashboard() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-[#1F8A8C] text-xs sm:text-sm"
+                  className="text-[#157173] text-xs sm:text-sm"
                   data-testid="link-view-all-logs"
                 >
                   View all <ChevronRight className="h-4 w-4 ml-1" />
@@ -334,7 +334,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               {!recentLogs || recentLogs.length === 0 ? (
-                <div className="text-center py-8 text-[#6E7A86]">
+                <div className="text-center py-8 text-[#64707C]">
                   <Shield className="h-8 w-8 mx-auto mb-2 opacity-40" />
                   <p className="text-sm">No audit events yet</p>
                   <p className="text-xs mt-1">All governance actions are recorded here</p>
@@ -360,7 +360,7 @@ export default function Dashboard() {
                         <p className="text-xs sm:text-sm font-medium text-[#0B2A3C] truncate">
                           {log.action}
                         </p>
-                        <p className="text-[10px] sm:text-xs text-[#6E7A86]">
+                        <p className="text-[10px] sm:text-xs text-[#64707C]">
                           {log.actor} · {new Date(log.createdAt).toLocaleString()}
                         </p>
                       </div>
