@@ -25,18 +25,18 @@ What this repository includes:
 
 ## Tech Stack
 
-| Layer | Technology |
-| --- | --- |
+| Layer    | Technology                             |
+| -------- | -------------------------------------- |
 | Frontend | React 19, TypeScript 5.6 (strict mode) |
-| Styling | Tailwind CSS 4, Shadcn UI |
-| Routing | wouter |
-| State | TanStack React Query |
-| Backend | Express 5, TypeScript |
-| Database | PostgreSQL, Drizzle ORM |
-| Build | Vite 7 (client), esbuild (server) |
-| Testing | Vitest, Playwright, axe-core |
-| Linting | ESLint 9, Prettier |
-| CI/CD | GitHub Actions |
+| Styling  | Tailwind CSS 4, Shadcn UI              |
+| Routing  | wouter                                 |
+| State    | TanStack React Query                   |
+| Backend  | Express 5, TypeScript                  |
+| Database | PostgreSQL, Drizzle ORM                |
+| Build    | Vite 7 (client), esbuild (server)      |
+| Testing  | Vitest, Playwright, axe-core           |
+| Linting  | ESLint 9, Prettier                     |
+| CI/CD    | GitHub Actions                         |
 
 ---
 
@@ -70,19 +70,19 @@ npm run dev:client
 
 ### Available Scripts
 
-| Script | Description |
-| --- | --- |
-| `npm run dev` | Start full-stack development server |
-| `npm run dev:client` | Start Vite client only (port 5000) |
-| `npm run build` | Build production artifacts |
-| `npm run start` | Start production server |
-| `npm run check` | TypeScript type checking |
-| `npm run lint` | Run ESLint |
-| `npm run format:check` | Check Prettier formatting |
-| `npm run format` | Auto-fix formatting |
-| `npm test` | Run unit and integration tests |
-| `npm run test:coverage` | Run tests with coverage report |
-| `npm run e2e` | Run Playwright E2E tests |
+| Script                  | Description                         |
+| ----------------------- | ----------------------------------- |
+| `npm run dev`           | Start full-stack development server |
+| `npm run dev:client`    | Start Vite client only (port 5000)  |
+| `npm run build`         | Build production artifacts          |
+| `npm run start`         | Start production server             |
+| `npm run check`         | TypeScript type checking            |
+| `npm run lint`          | Run ESLint                          |
+| `npm run format:check`  | Check Prettier formatting           |
+| `npm run format`        | Auto-fix formatting                 |
+| `npm test`              | Run unit and integration tests      |
+| `npm run test:coverage` | Run tests with coverage report      |
+| `npm run e2e`           | Run Playwright E2E tests            |
 
 ---
 
