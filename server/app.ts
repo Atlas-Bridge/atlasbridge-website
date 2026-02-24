@@ -78,7 +78,17 @@ let initialized = false;
 
 export async function initializeApp() {
   if (initialized) return;
-  await registerRoutes(app);
+
+  try {
+    await registerRoutes(app);
+  } catch (error) {
+    console.error("Failed to register routes:", error);
+    // Expose the initialization error on all API routes so it's diagnosable
+    app.use("/api", (_req: Request, res: Response) => {
+      const message = error instanceof Error ? error.message : String(error);
+      res.status(500).json({ error: "Server initialization failed", message });
+    });
+  }
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
