@@ -11,6 +11,52 @@ import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "../
 const PgSession = connectPgSimple(session);
 
 export async function registerRoutes(app: Express): Promise<void> {
+  // Docs routes are registered first — they don't require a database
+  // connection, so they work even when DATABASE_URL is not configured.
+  function resolveDocsDir(): string {
+    const candidates = [path.resolve(process.cwd(), "docs"), path.resolve(__dirname, "..", "docs")];
+    for (const dir of candidates) {
+      if (fs.existsSync(dir)) return dir;
+    }
+    return candidates[0];
+  }
+
+  app.get("/api/docs", (_req, res) => {
+    const docsDir = resolveDocsDir();
+    try {
+      const files = fs
+        .readdirSync(docsDir)
+        .filter((f) => f.endsWith(".md"))
+        .sort();
+      const docs = files.map((f) => ({
+        slug: f.replace(".md", ""),
+        title: f
+          .replace(".md", "")
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase()),
+      }));
+      res.json(docs);
+    } catch {
+      res.json([]);
+    }
+  });
+
+  app.get("/api/docs/:slug", (req, res) => {
+    const docsDir = resolveDocsDir();
+    const slug = req.params.slug.replace(/[^a-z0-9-]/gi, "");
+    const filePath = path.join(docsDir, `${slug}.md`);
+    try {
+      if (!fs.existsSync(filePath)) {
+        return res.status(404).json({ message: "Document not found" });
+      }
+      const content = fs.readFileSync(filePath, "utf-8");
+      res.json({ slug, content });
+    } catch {
+      res.status(500).json({ message: "Failed to read document" });
+    }
+  });
+
+  // Session middleware and authenticated routes below — require DATABASE_URL
   app.use(
     session({
       store: new PgSession({
@@ -224,48 +270,5 @@ export async function registerRoutes(app: Express): Promise<void> {
     const limit = parseInt(req.query.limit as string) || 100;
     const logs = await storage.getAuditLogs(limit);
     res.json(logs);
-  });
-
-  function resolveDocsDir(): string {
-    const candidates = [path.resolve(process.cwd(), "docs"), path.resolve(__dirname, "..", "docs")];
-    for (const dir of candidates) {
-      if (fs.existsSync(dir)) return dir;
-    }
-    return candidates[0];
-  }
-
-  app.get("/api/docs", (_req, res) => {
-    const docsDir = resolveDocsDir();
-    try {
-      const files = fs
-        .readdirSync(docsDir)
-        .filter((f) => f.endsWith(".md"))
-        .sort();
-      const docs = files.map((f) => ({
-        slug: f.replace(".md", ""),
-        title: f
-          .replace(".md", "")
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (c) => c.toUpperCase()),
-      }));
-      res.json(docs);
-    } catch {
-      res.json([]);
-    }
-  });
-
-  app.get("/api/docs/:slug", (req, res) => {
-    const docsDir = resolveDocsDir();
-    const slug = req.params.slug.replace(/[^a-z0-9-]/gi, "");
-    const filePath = path.join(docsDir, `${slug}.md`);
-    try {
-      if (!fs.existsSync(filePath)) {
-        return res.status(404).json({ message: "Document not found" });
-      }
-      const content = fs.readFileSync(filePath, "utf-8");
-      res.json({ slug, content });
-    } catch {
-      res.status(500).json({ message: "Failed to read document" });
-    }
   });
 }
