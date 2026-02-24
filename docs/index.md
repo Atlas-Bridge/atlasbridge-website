@@ -25,5 +25,6 @@ Every evaluation, decision, escalation, and override is recorded in an append-on
 - [Security](./security.md) — Security model and threat boundaries
 - [Compliance Alignment](./compliance-alignment.md) — Governance workflows and compliance considerations
 - [Enterprise Guide](./enterprise-guide.md) — Multi-workspace and production deployment
+- [Troubleshooting](./troubleshooting.md) — Common issues and solutions
 - [FAQ](./faq.md) — Frequently asked questions
 - [Glossary](./glossary.md) — Terminology and definitions
