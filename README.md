@@ -60,9 +60,9 @@ npm install
 npm run dev
 ```
 
-The development server starts on **http://localhost:5000** with Express serving the Vite-powered frontend.
+The development server starts on **http://localhost:3000** by default. Set the `PORT` environment variable to override.
 
-To run the Vite client independently:
+To run the Vite client independently (port 5000):
 
 ```bash
 npm run dev:client
