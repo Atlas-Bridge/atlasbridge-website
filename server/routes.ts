@@ -1,5 +1,4 @@
 import type { Express } from "express";
-import type { Server } from "http";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import bcrypt from "bcrypt";
@@ -11,7 +10,7 @@ import { insertUserSchema, insertPolicySchema, insertPolicyRunSchema } from "@sh
 
 const PgSession = connectPgSimple(session);
 
-export async function registerRoutes(httpServer: Server, app: Express): Promise<Server> {
+export async function registerRoutes(app: Express): Promise<void> {
   app.use(
     session({
       store: new PgSession({
@@ -261,6 +260,4 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
       res.status(500).json({ message: "Failed to read document" });
     }
   });
-
-  return httpServer;
 }
