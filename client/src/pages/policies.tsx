@@ -97,7 +97,7 @@ export default function Policies() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4 sm:gap-8">
             <Link href="/dashboard" className="flex items-center gap-2">
-              <ShieldCheck className="h-6 w-6 text-[#1F8A8C]" />
+              <ShieldCheck className="h-6 w-6 text-[#157173]" />
               <span className="text-white font-bold text-lg hidden sm:inline">AtlasBridge</span>
             </Link>
             <div className="hidden md:flex items-center gap-1">
@@ -190,7 +190,7 @@ export default function Policies() {
             >
               Governance Policies
             </h1>
-            <p className="text-[#6E7A86] mt-1 text-sm sm:text-base">
+            <p className="text-[#64707C] mt-1 text-sm sm:text-base">
               Define rules that govern agent behavior
             </p>
           </div>
@@ -282,9 +282,9 @@ export default function Policies() {
         ) : !policies || policies.length === 0 ? (
           <Card className="border-0 shadow-sm">
             <CardContent className="py-12 sm:py-16 text-center">
-              <FileText className="h-12 w-12 mx-auto mb-4 text-[#6E7A86] opacity-40" />
+              <FileText className="h-12 w-12 mx-auto mb-4 text-[#64707C] opacity-40" />
               <h3 className="text-lg font-bold text-[#0B2A3C] mb-2">No policies defined</h3>
-              <p className="text-[#6E7A86] mb-6 max-w-md mx-auto text-sm sm:text-base">
+              <p className="text-[#64707C] mb-6 max-w-md mx-auto text-sm sm:text-base">
                 Governance policies define the rules agents must follow. Create your first policy to
                 start governing agent behavior.
               </p>
@@ -315,14 +315,14 @@ export default function Policies() {
                         }`}
                       >
                         <FileText
-                          className={`h-5 w-5 ${policy.enabled ? "text-[#1F8A8C]" : "text-gray-400"}`}
+                          className={`h-5 w-5 ${policy.enabled ? "text-[#157173]" : "text-gray-400"}`}
                         />
                       </div>
                       <div className="min-w-0">
                         <h3 className="font-bold text-[#0B2A3C] text-sm sm:text-base truncate">
                           {policy.name}
                         </h3>
-                        <p className="text-xs sm:text-sm text-[#6E7A86] truncate">
+                        <p className="text-xs sm:text-sm text-[#64707C] truncate">
                           {policy.description || "No description"}
                         </p>
                       </div>
@@ -348,7 +348,7 @@ export default function Policies() {
                         data-testid={`button-toggle-${policy.id}`}
                       >
                         {policy.enabled ? (
-                          <ToggleRight className="h-6 w-6 text-[#1F8A8C]" />
+                          <ToggleRight className="h-6 w-6 text-[#157173]" />
                         ) : (
                           <ToggleLeft className="h-6 w-6 text-gray-400" />
                         )}

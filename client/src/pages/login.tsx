@@ -60,10 +60,10 @@ export default function Login() {
           <div className="h-2 bg-[#1F8A8C]" />
           <CardHeader className="pt-8 px-8 pb-4">
             <div className="h-12 w-12 rounded-2xl bg-[#0B2A3C] flex items-center justify-center mb-6">
-              <ShieldCheck className="h-7 w-7 text-[#1F8A8C]" />
+              <ShieldCheck className="h-7 w-7 text-[#157173]" />
             </div>
             <CardTitle className="text-2xl font-bold text-[#0B2A3C]">AtlasBridge Console</CardTitle>
-            <CardDescription className="text-[#6E7A86]">
+            <CardDescription className="text-[#64707C]">
               {isRegister
                 ? "Create your account to access the governance console"
                 : "Sign in to the governance console"}
@@ -118,14 +118,14 @@ export default function Login() {
               </Button>
             </form>
             <div className="text-center">
-              <p className="text-sm text-[#6E7A86]">
+              <p className="text-sm text-[#64707C]">
                 {isRegister ? "Already have an account?" : "Don't have an account?"}{" "}
                 <button
                   onClick={() => {
                     setIsRegister(!isRegister);
                     setError("");
                   }}
-                  className="text-[#1F8A8C] font-bold hover:underline"
+                  className="text-[#157173] font-bold hover:underline"
                   data-testid="button-toggle-mode"
                 >
                   {isRegister ? "Sign In" : "Create Account"}
@@ -134,7 +134,7 @@ export default function Login() {
             </div>
             <div className="pt-4 border-t flex gap-4 justify-center grayscale opacity-50">
               <img src="/favicons/favicon-32.png" className="h-4 w-4" alt="AtlasBridge" />
-              <span className="text-[10px] text-[#6E7A86] uppercase tracking-[0.2em] font-bold">
+              <span className="text-[10px] text-[#64707C] uppercase tracking-[0.2em] font-bold">
                 Secure Local Boundary Enabled
               </span>
             </div>

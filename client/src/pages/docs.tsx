@@ -84,12 +84,12 @@ export default function Docs() {
               {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
             <Link href="/" className="flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-[#1F8A8C]" />
+              <ShieldCheck className="h-5 w-5 text-[#157173]" />
               <span className="text-white font-bold">AtlasBridge</span>
             </Link>
             <span className="text-white/30 hidden sm:inline">|</span>
             <div className="hidden sm:flex items-center gap-1.5">
-              <BookOpen className="h-4 w-4 text-[#1F8A8C]" />
+              <BookOpen className="h-4 w-4 text-[#157173]" />
               <span className="text-white/80 text-sm font-medium">Documentation</span>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Docs() {
         `}
         >
           <div className="p-5">
-            <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#6E7A86] mb-4">
+            <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#64707C] mb-4">
               Contents
             </h3>
             <nav className="space-y-0.5">
@@ -134,7 +134,7 @@ export default function Docs() {
                   <button
                     className={`w-full text-left px-3 py-2.5 rounded-lg text-[13px] transition-colors ${
                       slug === s
-                        ? "bg-[#1F8A8C]/10 text-[#1F8A8C] font-semibold"
+                        ? "bg-[#1F8A8C]/10 text-[#157173] font-semibold"
                         : "text-[#0B2A3C]/70 hover:bg-gray-100 hover:text-[#0B2A3C]"
                     }`}
                     data-testid={`nav-doc-${s}`}
@@ -206,7 +206,7 @@ export default function Docs() {
                       return (
                         <Link
                           href={docSlug === "index" ? "/docs" : `/docs/${docSlug}`}
-                          className="text-[#1F8A8C] font-medium hover:underline underline-offset-2"
+                          className="text-[#157173] font-medium hover:underline underline-offset-2"
                         >
                           {children}
                         </Link>
@@ -215,7 +215,7 @@ export default function Docs() {
                     return (
                       <a
                         href={href}
-                        className="text-[#1F8A8C] font-medium hover:underline underline-offset-2"
+                        className="text-[#157173] font-medium hover:underline underline-offset-2"
                         {...props}
                       >
                         {children}
@@ -246,7 +246,7 @@ export default function Docs() {
                     }
                     return (
                       <li
-                        className="text-[15px] sm:text-base text-[#0B2A3C]/80 leading-[1.8] pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#1F8A8C] before:font-bold"
+                        className="text-[15px] sm:text-base text-[#0B2A3C]/80 leading-[1.8] pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-[#157173] before:font-bold"
                         {...props}
                       >
                         {children}
@@ -333,7 +333,7 @@ export default function Docs() {
             </article>
           ) : (
             <div className="text-center py-20">
-              <BookOpen className="h-12 w-12 mx-auto mb-4 text-[#6E7A86] opacity-40" />
+              <BookOpen className="h-12 w-12 mx-auto mb-4 text-[#64707C] opacity-40" />
               <h3 className="text-lg font-bold text-[#0B2A3C] mb-2">Document not found</h3>
               <Link href="/docs">
                 <Button
@@ -358,7 +358,7 @@ export default function Docs() {
                 >
                   <Button
                     variant="ghost"
-                    className="text-[#6E7A86] hover:text-[#0B2A3C] text-sm"
+                    className="text-[#64707C] hover:text-[#0B2A3C] text-sm"
                     data-testid="button-prev-doc"
                   >
                     <ArrowLeft className="h-4 w-4 mr-2" />
@@ -372,7 +372,7 @@ export default function Docs() {
                 <Link href={`/docs/${DOC_ORDER[DOC_ORDER.indexOf(slug) + 1]}`}>
                   <Button
                     variant="ghost"
-                    className="text-[#6E7A86] hover:text-[#0B2A3C] text-sm"
+                    className="text-[#64707C] hover:text-[#0B2A3C] text-sm"
                     data-testid="button-next-doc"
                   >
                     {slugToTitle(DOC_ORDER[DOC_ORDER.indexOf(slug) + 1])}

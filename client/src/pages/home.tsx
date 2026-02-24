@@ -127,7 +127,7 @@ function TerminalTyping() {
             </div>
             <span className="text-xs text-white/40 truncate">atlasbridge — supervisor</span>
           </div>
-          <CardContent className="p-3 sm:p-4 text-[#6E7A86]">
+          <CardContent className="p-3 sm:p-4 text-[#64707C]">
             <div className="flex items-start gap-2 sm:gap-3 overflow-x-auto">
               <span className="text-green-400 shrink-0">➜</span>
               <div className="space-y-1 min-w-0">
@@ -272,7 +272,7 @@ export default function Home() {
                 className="h-8 w-8 transition-transform duration-300 group-hover:rotate-12"
               />
               <span className="text-xl font-bold tracking-tight text-[#0B2A3C]">
-                Atlas<span className="text-[#6E7A86] font-medium">Bridge</span>
+                Atlas<span className="text-[#64707C] font-medium">Bridge</span>
               </span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1">
@@ -286,7 +286,7 @@ export default function Home() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium hover:text-[#1F8A8C] transition-colors px-3 py-2 rounded-lg hover:bg-[#1F8A8C]/5"
+                  className="text-sm font-medium hover:text-[#157173] transition-colors px-3 py-2 rounded-lg hover:bg-[#1F8A8C]/5"
                 >
                   {item.label}
                 </Link>
@@ -405,7 +405,7 @@ export default function Home() {
                 >
                   <Badge
                     variant="outline"
-                    className="mb-6 border-[#1F8A8C] text-[#1F8A8C] py-1 px-3 animate-shimmer"
+                    className="mb-6 border-[#1F8A8C] text-[#157173] py-1 px-3 animate-shimmer"
                   >
                     Open Source Infrastructure
                   </Badge>
@@ -420,7 +420,7 @@ export default function Home() {
                   Controlled Autonomy for AI Agents
                 </h1>
                 <p
-                  className="mt-6 text-base text-[#6E7A86] sm:text-xl"
+                  className="mt-6 text-base text-[#64707C] sm:text-xl"
                   style={{
                     opacity: 0,
                     animation: "fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s forwards",
@@ -468,20 +468,20 @@ export default function Home() {
                       <CardContent className="p-4 sm:p-6">
                         <div className="flex items-center justify-between mb-4 gap-2">
                           <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                            <ShieldCheck className="h-4 w-4 text-[#1F8A8C] shrink-0" />
+                            <ShieldCheck className="h-4 w-4 text-[#157173] shrink-0" />
                             <span className="truncate">Policy Decision Trace</span>
                           </h3>
-                          <Badge className="bg-[#1F8A8C]/20 text-[#1F8A8C] border-0 shrink-0 text-[10px] sm:text-xs">
+                          <Badge className="bg-[#1F8A8C]/20 text-[#157173] border-0 shrink-0 text-[10px] sm:text-xs">
                             DETERMINISTIC
                           </Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center justify-between text-xs py-2 border-b border-white/5">
-                            <span className="text-[#6E7A86]">Evaluation Result</span>
+                            <span className="text-[#64707C]">Evaluation Result</span>
                             <span className="text-green-400 font-medium">ESCALATE</span>
                           </div>
                           <div className="flex items-center justify-between text-xs py-2 border-b border-white/5">
-                            <span className="text-[#6E7A86]">Audit Log Status</span>
+                            <span className="text-[#64707C]">Audit Log Status</span>
                             <span className="text-white text-[11px] sm:text-xs">
                               APPEND_ONLY_SIGNED
                             </span>
@@ -489,13 +489,13 @@ export default function Home() {
                           <div className="flex flex-wrap gap-2 pt-2">
                             <Badge
                               variant="outline"
-                              className="text-[10px] py-0 border-white/10 text-[#6E7A86]"
+                              className="text-[10px] py-0 border-white/10 text-[#64707C]"
                             >
                               Local execution
                             </Badge>
                             <Badge
                               variant="outline"
-                              className="text-[10px] py-0 border-white/10 text-[#6E7A86]"
+                              className="text-[10px] py-0 border-white/10 text-[#64707C]"
                             >
                               Deterministic eval
                             </Badge>
@@ -533,7 +533,7 @@ export default function Home() {
                       <FadeUp key={i} delay={0.1 * (i + 1)}>
                         <div className="flex items-center gap-3 p-3 sm:p-4 rounded-lg bg-[#F5F7F9] card-hover-3d cursor-default">
                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm shrink-0">
-                            <item.icon className="h-5 w-5 text-[#1F8A8C]" />
+                            <item.icon className="h-5 w-5 text-[#157173]" />
                           </div>
                           <span className="font-medium text-sm sm:text-base">{item.text}</span>
                         </div>
@@ -577,7 +577,7 @@ export default function Home() {
           <div className="container mx-auto px-4 lg:px-8">
             <FadeUp className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">How It Works</h2>
-              <p className="text-[#6E7A86]">
+              <p className="text-[#64707C]">
                 Cloud observes, local executes. AtlasBridge maintains a strict execution boundary
                 while providing governance visibility.
               </p>
@@ -600,11 +600,11 @@ export default function Home() {
                 <ScaleIn key={i} delay={0.12 * i}>
                   <Card className="border-0 shadow-sm relative overflow-hidden group card-hover-3d glow-border h-full">
                     <CardContent className="p-6 sm:p-8">
-                      <div className="text-5xl font-black text-[#0B2A3C]/[0.04] absolute -top-3 -right-2 transition-all duration-500 group-hover:text-[#1F8A8C]/10 group-hover:scale-110">
+                      <div className="text-5xl font-black text-[#0B2A3C]/[0.04] absolute -top-3 -right-2 transition-all duration-500 group-hover:text-[#157173]/10 group-hover:scale-110">
                         {i + 1}
                       </div>
                       <h3 className="text-lg sm:text-xl font-bold mb-3">{step.title}</h3>
-                      <p className="text-[#6E7A86] leading-relaxed text-sm sm:text-base">
+                      <p className="text-[#64707C] leading-relaxed text-sm sm:text-base">
                         {step.desc}
                       </p>
                     </CardContent>
@@ -640,7 +640,7 @@ export default function Home() {
                       <FadeUp key={i} delay={0.1 * (i + 1)}>
                         <div className="flex gap-3 sm:gap-4 items-start group">
                           <div className="h-6 w-6 rounded-full bg-[#1F8A8C]/20 flex items-center justify-center shrink-0 mt-0.5 transition-all duration-300 group-hover:bg-[#1F8A8C]/40 group-hover:scale-110">
-                            <CheckCircle2 className="h-4 w-4 text-[#1F8A8C]" />
+                            <CheckCircle2 className="h-4 w-4 text-[#157173]" />
                           </div>
                           <p className="text-white/80 leading-snug text-sm sm:text-base">
                             {bullet}
@@ -649,7 +649,7 @@ export default function Home() {
                       </FadeUp>
                     ))}
                   </div>
-                  <p className="mt-6 sm:mt-8 text-sm text-[#6E7A86] italic border-l-2 border-[#1F8A8C] pl-4">
+                  <p className="mt-6 sm:mt-8 text-sm text-[#64707C] italic border-l-2 border-[#1F8A8C] pl-4">
                     Compliance outcomes depend on your environment, controls, and operating
                     procedures.
                   </p>
@@ -659,12 +659,12 @@ export default function Home() {
                 <Card3D>
                   <div className="bg-white/5 rounded-2xl p-6 sm:p-8 backdrop-blur-sm border border-white/10 hover:border-[#1F8A8C]/30 transition-colors duration-500">
                     <div className="flex items-center gap-3 mb-6 sm:mb-8">
-                      <div className="p-3 rounded-lg bg-[#1F8A8C]/20 text-[#1F8A8C]">
+                      <div className="p-3 rounded-lg bg-[#1F8A8C]/20 text-[#157173]">
                         <Lock className="h-6 w-6" />
                       </div>
                       <div>
                         <h4 className="font-bold">Governance Perimeter</h4>
-                        <p className="text-sm text-[#6E7A86]">Deterministic runtime controls</p>
+                        <p className="text-sm text-[#64707C]">Deterministic runtime controls</p>
                       </div>
                     </div>
                     <div className="space-y-4">
@@ -679,20 +679,20 @@ export default function Home() {
                           }}
                         />
                       </div>
-                      <div className="flex justify-between text-xs text-[#6E7A86]">
+                      <div className="flex justify-between text-xs text-[#64707C]">
                         <span>Policy Evaluation</span>
                         <span>100% Deterministic</span>
                       </div>
                       <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
                         <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors duration-300">
                           <AnimatedCounter target="0%" />
-                          <div className="text-[10px] text-[#6E7A86] uppercase tracking-wider mt-1">
+                          <div className="text-[10px] text-[#64707C] uppercase tracking-wider mt-1">
                             Cloud Execution
                           </div>
                         </div>
                         <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors duration-300">
                           <AnimatedCounter target="100%" />
-                          <div className="text-[10px] text-[#6E7A86] uppercase tracking-wider mt-1">
+                          <div className="text-[10px] text-[#64707C] uppercase tracking-wider mt-1">
                             Audit Trace
                           </div>
                         </div>
@@ -748,9 +748,9 @@ export default function Home() {
               ].map((feat, i) => (
                 <ScaleIn key={i} delay={0.08 * i}>
                   <div className="p-5 sm:p-6 rounded-2xl border bg-[#F5F7F9] hover:border-[#1F8A8C]/40 hover:bg-white transition-all group card-hover-3d glow-border cursor-default h-full">
-                    <feat.icon className="h-7 w-7 sm:h-8 sm:w-8 text-[#1F8A8C] mb-3 sm:mb-4 transition-transform duration-500 group-hover:scale-110" />
+                    <feat.icon className="h-7 w-7 sm:h-8 sm:w-8 text-[#157173] mb-3 sm:mb-4 transition-transform duration-500 group-hover:scale-110" />
                     <h3 className="text-base sm:text-lg font-bold mb-2">{feat.title}</h3>
-                    <p className="text-sm text-[#6E7A86] leading-relaxed">{feat.desc}</p>
+                    <p className="text-sm text-[#64707C] leading-relaxed">{feat.desc}</p>
                   </div>
                 </ScaleIn>
               ))}
@@ -776,7 +776,7 @@ export default function Home() {
                       ].map((step, i) => (
                         <FadeUp key={i} delay={0.15 * i}>
                           <div className="space-y-2">
-                            <p className="text-xs font-semibold text-[#1F8A8C] uppercase tracking-widest">
+                            <p className="text-xs font-semibold text-[#157173] uppercase tracking-widest">
                               {step.label}
                             </p>
                             <div className="bg-black/40 rounded-xl p-3 sm:p-4 font-mono text-xs sm:text-sm text-[#F5F7F9] border border-white/10 flex items-center justify-between group hover:border-[#1F8A8C]/30 transition-colors duration-300">
@@ -828,7 +828,7 @@ export default function Home() {
                 <FadeUp key={i} delay={0.1 * i}>
                   <div className="flex items-center justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl border hover:shadow-lg transition-all duration-300 gap-3 card-hover-3d group">
                     <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-                      <span className="text-xs sm:text-sm font-mono text-[#6E7A86] shrink-0 group-hover:text-[#1F8A8C] transition-colors">
+                      <span className="text-xs sm:text-sm font-mono text-[#64707C] shrink-0 group-hover:text-[#157173] transition-colors">
                         {item.version}
                       </span>
                       <h4 className="font-bold text-sm sm:text-base truncate">{item.title}</h4>
@@ -859,14 +859,14 @@ export default function Home() {
                   className="h-6 w-6 grayscale invert transition-transform duration-300 group-hover:rotate-12"
                 />
                 <span className="text-lg font-bold tracking-tight">
-                  Atlas<span className="text-[#6E7A86] font-medium">Bridge</span>
+                  Atlas<span className="text-[#64707C] font-medium">Bridge</span>
                 </span>
               </Link>
-              <p className="text-[#6E7A86] max-w-sm mb-6 text-sm sm:text-base">
+              <p className="text-[#64707C] max-w-sm mb-6 text-sm sm:text-base">
                 Deterministic governance for AI agents. Local-first execution with
                 infrastructure-grade auditability.
               </p>
-              <p className="text-xs text-[#6E7A86] italic">
+              <p className="text-xs text-[#64707C] italic">
                 AtlasBridge is local-first. Cloud features are observe-only by design.
               </p>
             </div>
@@ -874,7 +874,7 @@ export default function Home() {
               <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">
                 Resources
               </h5>
-              <ul className="space-y-3 sm:space-y-4 text-sm text-[#6E7A86]">
+              <ul className="space-y-3 sm:space-y-4 text-sm text-[#64707C]">
                 <li>
                   <Link href="/docs" className="hover:text-white transition-colors duration-300">
                     Documentation
@@ -902,7 +902,7 @@ export default function Home() {
               <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">
                 Legal
               </h5>
-              <ul className="space-y-3 sm:space-y-4 text-sm text-[#6E7A86]">
+              <ul className="space-y-3 sm:space-y-4 text-sm text-[#64707C]">
                 <li>
                   <Link
                     href="/privacy"
@@ -942,7 +942,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#6E7A86]">
+          <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#64707C]">
             <p>© 2026 AtlasBridge Contributors. All rights reserved.</p>
             <div className="flex gap-6">
               <a

@@ -39,7 +39,7 @@ export default function AuditLog() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4 sm:gap-8">
             <Link href="/dashboard" className="flex items-center gap-2">
-              <ShieldCheck className="h-6 w-6 text-[#1F8A8C]" />
+              <ShieldCheck className="h-6 w-6 text-[#157173]" />
               <span className="text-white font-bold text-lg hidden sm:inline">AtlasBridge</span>
             </Link>
             <div className="hidden md:flex items-center gap-1">
@@ -132,7 +132,7 @@ export default function AuditLog() {
             >
               Audit Log
             </h1>
-            <p className="text-[#6E7A86] mt-1 text-sm sm:text-base">
+            <p className="text-[#64707C] mt-1 text-sm sm:text-base">
               Complete record of all governance actions and decisions
             </p>
           </div>
@@ -151,19 +151,19 @@ export default function AuditLog() {
         <Card className="border-0 shadow-sm">
           <CardContent className="p-0">
             {isLoading ? (
-              <div className="p-8 text-center text-[#6E7A86]">Loading audit log...</div>
+              <div className="p-8 text-center text-[#64707C]">Loading audit log...</div>
             ) : !logs || logs.length === 0 ? (
               <div className="py-12 sm:py-16 text-center">
-                <Shield className="h-12 w-12 mx-auto mb-4 text-[#6E7A86] opacity-40" />
+                <Shield className="h-12 w-12 mx-auto mb-4 text-[#64707C] opacity-40" />
                 <h3 className="text-lg font-bold text-[#0B2A3C] mb-2">No audit events</h3>
-                <p className="text-[#6E7A86] max-w-md mx-auto text-sm sm:text-base px-4">
+                <p className="text-[#64707C] max-w-md mx-auto text-sm sm:text-base px-4">
                   All governance actions are automatically recorded here for compliance and
                   traceability.
                 </p>
               </div>
             ) : (
               <>
-                <div className="hidden md:grid grid-cols-12 px-4 sm:px-6 py-3 bg-[#F5F7F9] text-xs font-bold text-[#6E7A86] uppercase tracking-wider">
+                <div className="hidden md:grid grid-cols-12 px-4 sm:px-6 py-3 bg-[#F5F7F9] text-xs font-bold text-[#64707C] uppercase tracking-wider">
                   <div className="col-span-3">Timestamp</div>
                   <div className="col-span-3">Action</div>
                   <div className="col-span-2">Actor</div>
@@ -178,14 +178,14 @@ export default function AuditLog() {
                       className="grid grid-cols-12 px-4 sm:px-6 py-3 hover:bg-[#F5F7F9]/50 items-center"
                       data-testid={`audit-row-${log.id}`}
                     >
-                      <div className="col-span-3 text-sm text-[#6E7A86] font-mono">
+                      <div className="col-span-3 text-sm text-[#64707C] font-mono">
                         {new Date(log.createdAt).toLocaleString()}
                       </div>
                       <div className="col-span-3">
                         <span className="text-sm font-medium text-[#0B2A3C]">{log.action}</span>
                       </div>
-                      <div className="col-span-2 text-sm text-[#6E7A86]">{log.actor}</div>
-                      <div className="col-span-3 text-sm text-[#6E7A86] font-mono truncate">
+                      <div className="col-span-2 text-sm text-[#64707C]">{log.actor}</div>
+                      <div className="col-span-3 text-sm text-[#64707C] font-mono truncate">
                         {log.target || "—"}
                       </div>
                       <div className="col-span-1">
@@ -224,7 +224,7 @@ export default function AuditLog() {
                           }`}
                         />
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-[#6E7A86]">
+                      <div className="flex items-center gap-2 text-xs text-[#64707C]">
                         <span>{log.actor}</span>
                         <span>·</span>
                         <span className="font-mono">
@@ -232,7 +232,7 @@ export default function AuditLog() {
                         </span>
                       </div>
                       {log.target && (
-                        <p className="text-xs text-[#6E7A86] font-mono truncate">{log.target}</p>
+                        <p className="text-xs text-[#64707C] font-mono truncate">{log.target}</p>
                       )}
                     </div>
                   ))}
