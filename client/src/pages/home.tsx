@@ -127,7 +127,7 @@ function TerminalTyping() {
             </div>
             <span className="text-xs text-white/40 truncate">atlasbridge — supervisor</span>
           </div>
-          <CardContent className="p-3 sm:p-4 text-[#64707C]">
+          <CardContent className="p-3 sm:p-4 text-[#94A3B3]">
             <div className="flex items-start gap-2 sm:gap-3 overflow-x-auto">
               <span className="text-green-400 shrink-0">➜</span>
               <div className="space-y-1 min-w-0">
@@ -420,7 +420,7 @@ export default function Home() {
                   Controlled Autonomy for AI Agents
                 </h1>
                 <p
-                  className="mt-6 text-base text-[#64707C] sm:text-xl"
+                  className="mt-6 text-base text-[#94A3B3] sm:text-xl"
                   style={{
                     opacity: 0,
                     animation: "fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s forwards",
@@ -477,11 +477,11 @@ export default function Home() {
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center justify-between text-xs py-2 border-b border-white/5">
-                            <span className="text-[#64707C]">Evaluation Result</span>
+                            <span className="text-[#94A3B3]">Evaluation Result</span>
                             <span className="text-green-400 font-medium">ESCALATE</span>
                           </div>
                           <div className="flex items-center justify-between text-xs py-2 border-b border-white/5">
-                            <span className="text-[#64707C]">Audit Log Status</span>
+                            <span className="text-[#94A3B3]">Audit Log Status</span>
                             <span className="text-white text-[11px] sm:text-xs">
                               APPEND_ONLY_SIGNED
                             </span>
@@ -489,13 +489,13 @@ export default function Home() {
                           <div className="flex flex-wrap gap-2 pt-2">
                             <Badge
                               variant="outline"
-                              className="text-[10px] py-0 border-white/10 text-[#64707C]"
+                              className="text-[10px] py-0 border-white/10 text-[#94A3B3]"
                             >
                               Local execution
                             </Badge>
                             <Badge
                               variant="outline"
-                              className="text-[10px] py-0 border-white/10 text-[#64707C]"
+                              className="text-[10px] py-0 border-white/10 text-[#94A3B3]"
                             >
                               Deterministic eval
                             </Badge>
@@ -649,7 +649,7 @@ export default function Home() {
                       </FadeUp>
                     ))}
                   </div>
-                  <p className="mt-6 sm:mt-8 text-sm text-[#64707C] italic border-l-2 border-[#1F8A8C] pl-4">
+                  <p className="mt-6 sm:mt-8 text-sm text-[#94A3B3] italic border-l-2 border-[#1F8A8C] pl-4">
                     Compliance outcomes depend on your environment, controls, and operating
                     procedures.
                   </p>
@@ -664,7 +664,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="font-bold">Governance Perimeter</h4>
-                        <p className="text-sm text-[#64707C]">Deterministic runtime controls</p>
+                        <p className="text-sm text-[#94A3B3]">Deterministic runtime controls</p>
                       </div>
                     </div>
                     <div className="space-y-4">
@@ -679,20 +679,20 @@ export default function Home() {
                           }}
                         />
                       </div>
-                      <div className="flex justify-between text-xs text-[#64707C]">
+                      <div className="flex justify-between text-xs text-[#94A3B3]">
                         <span>Policy Evaluation</span>
                         <span>100% Deterministic</span>
                       </div>
                       <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
                         <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors duration-300">
                           <AnimatedCounter target="0%" />
-                          <div className="text-[10px] text-[#64707C] uppercase tracking-wider mt-1">
+                          <div className="text-[10px] text-[#94A3B3] uppercase tracking-wider mt-1">
                             Cloud Execution
                           </div>
                         </div>
                         <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors duration-300">
                           <AnimatedCounter target="100%" />
-                          <div className="text-[10px] text-[#64707C] uppercase tracking-wider mt-1">
+                          <div className="text-[10px] text-[#94A3B3] uppercase tracking-wider mt-1">
                             Audit Trace
                           </div>
                         </div>
@@ -859,14 +859,14 @@ export default function Home() {
                   className="h-6 w-6 grayscale invert transition-transform duration-300 group-hover:rotate-12"
                 />
                 <span className="text-lg font-bold tracking-tight">
-                  Atlas<span className="text-[#64707C] font-medium">Bridge</span>
+                  Atlas<span className="text-[#94A3B3] font-medium">Bridge</span>
                 </span>
               </Link>
-              <p className="text-[#64707C] max-w-sm mb-6 text-sm sm:text-base">
+              <p className="text-[#94A3B3] max-w-sm mb-6 text-sm sm:text-base">
                 Deterministic governance for AI agents. Local-first execution with
                 infrastructure-grade auditability.
               </p>
-              <p className="text-xs text-[#64707C] italic">
+              <p className="text-xs text-[#94A3B3] italic">
                 AtlasBridge is local-first. Cloud features are observe-only by design.
               </p>
             </div>
@@ -874,7 +874,7 @@ export default function Home() {
               <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">
                 Resources
               </h5>
-              <ul className="space-y-3 sm:space-y-4 text-sm text-[#64707C]">
+              <ul className="space-y-3 sm:space-y-4 text-sm text-[#94A3B3]">
                 <li>
                   <Link href="/docs" className="hover:text-white transition-colors duration-300">
                     Documentation
@@ -902,7 +902,7 @@ export default function Home() {
               <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">
                 Legal
               </h5>
-              <ul className="space-y-3 sm:space-y-4 text-sm text-[#64707C]">
+              <ul className="space-y-3 sm:space-y-4 text-sm text-[#94A3B3]">
                 <li>
                   <Link
                     href="/privacy"
@@ -942,7 +942,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#64707C]">
+          <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#94A3B3]">
             <p>© 2026 AtlasBridge Contributors. All rights reserved.</p>
             <div className="flex gap-6">
               <a
