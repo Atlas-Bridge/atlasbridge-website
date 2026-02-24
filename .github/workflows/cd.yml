@@ -59,49 +59,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: production-build-${{ github.sha }}
-          path: dist/
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
 
-      - name: Verify artifact integrity
-        run: |
-          test -d dist/public && echo "Client assets: OK"
-          test -f dist/index.cjs && echo "Server bundle: OK"
-
-      # ──────────────────────────────────────────────
-      # DEPLOY STEP — Replace with your hosting provider
-      # ──────────────────────────────────────────────
-      # Examples:
-      #
-      # Render:
-      #   - name: Deploy to Render
-      #     run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
-      #
-      # Railway:
-      #   - name: Deploy to Railway
-      #     uses: bervProject/railway-deploy@main
-      #     with:
-      #       railway_token: ${{ secrets.RAILWAY_TOKEN }}
-      #       service: atlasbridge-website
-      #
-      # Fly.io:
-      #   - name: Deploy to Fly.io
-      #     uses: superfly/flyctl-actions/setup-flyctl@master
-      #   - run: flyctl deploy --remote-only
-      #     env:
-      #       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-      #
-      # ──────────────────────────────────────────────
-      - name: Deploy placeholder
-        run: |
-          echo "================================================"
-          echo "  BUILD VERIFIED — READY FOR DEPLOYMENT"
-          echo "  Commit: ${{ github.sha }}"
-          echo "  Ref: ${{ github.ref }}"
-          echo "================================================"
-          echo ""
-          echo "To enable deployment, replace this step with"
-          echo "your hosting provider's deploy command."
-          echo "See .github/workflows/cd.yml for examples."
+      - name: Deploy to Vercel
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
