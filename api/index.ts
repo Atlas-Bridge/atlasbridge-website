@@ -5,9 +5,7 @@ let initializeApp: any;
 let loadError: string | null = null;
 
 try {
-  // Use require() so ncc traces the dependency tree
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const mod = require("../server/app");
+  const mod = await import("../server/app.js");
   app = mod.default || mod;
   initializeApp = mod.initializeApp;
 } catch (e: unknown) {
