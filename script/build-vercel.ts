@@ -22,7 +22,7 @@ async function buildVercel() {
   // Node.js built-ins are kept external (automatic with platform: "node").
   console.log("building api function…");
   await esbuild({
-    entryPoints: ["api/index.ts"],
+    entryPoints: ["server/vercel-handler.ts"],
     platform: "node",
     target: "node22",
     bundle: true,
