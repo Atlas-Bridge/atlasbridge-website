@@ -1,11 +1,18 @@
 import { eq, desc } from "drizzle-orm";
 import { db } from "./db";
 import {
-  users, policies, policyRuns, auditLogs,
-  type User, type InsertUser,
-  type Policy, type InsertPolicy,
-  type PolicyRun, type InsertPolicyRun,
-  type AuditLog, type InsertAuditLog,
+  users,
+  policies,
+  policyRuns,
+  auditLogs,
+  type User,
+  type InsertUser,
+  type Policy,
+  type InsertPolicy,
+  type PolicyRun,
+  type InsertPolicyRun,
+  type AuditLog,
+  type InsertAuditLog,
 } from "@shared/schema";
 
 export interface IStorage {
@@ -61,7 +68,10 @@ export class DatabaseStorage implements IStorage {
   }
 
   async createPolicy(policy: InsertPolicy, userId: string): Promise<Policy> {
-    const [created] = await db.insert(policies).values({ ...policy, createdBy: userId }).returning();
+    const [created] = await db
+      .insert(policies)
+      .values({ ...policy, createdBy: userId })
+      .returning();
     return created;
   }
 
@@ -99,11 +109,11 @@ export class DatabaseStorage implements IStorage {
 
     return {
       totalPolicies: allPolicies.length,
-      activePolicies: allPolicies.filter(p => p.enabled).length,
+      activePolicies: allPolicies.filter((p) => p.enabled).length,
       totalRuns: allRuns.length,
-      allowedRuns: allRuns.filter(r => r.decision === "allow").length,
-      deniedRuns: allRuns.filter(r => r.decision === "deny").length,
-      escalatedRuns: allRuns.filter(r => r.decision === "escalate").length,
+      allowedRuns: allRuns.filter((r) => r.decision === "allow").length,
+      deniedRuns: allRuns.filter((r) => r.decision === "deny").length,
+      escalatedRuns: allRuns.filter((r) => r.decision === "escalate").length,
     };
   }
 }

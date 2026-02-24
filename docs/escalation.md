@@ -10,13 +10,13 @@ Escalation is triggered when a policy evaluation determines that an agent action
 
 The following conditions can trigger escalation:
 
-| Trigger                    | Description                                                              |
-|----------------------------|--------------------------------------------------------------------------|
-| **Risk threshold exceeded** | The computed risk score for a command exceeds the escalation threshold   |
-| **Policy enforcement mode** | The matching policy uses `escalate` enforcement rather than `strict`     |
-| **Sensitive target**        | The command targets a directory or resource marked as sensitive          |
-| **Unknown command pattern** | The command does not match any existing policy rule                      |
-| **Autonomy mode boundary**  | The system is in `ASSIST` mode and the action requires `FULL` autonomy  |
+| Trigger                     | Description                                                            |
+| --------------------------- | ---------------------------------------------------------------------- |
+| **Risk threshold exceeded** | The computed risk score for a command exceeds the escalation threshold |
+| **Policy enforcement mode** | The matching policy uses `escalate` enforcement rather than `strict`   |
+| **Sensitive target**        | The command targets a directory or resource marked as sensitive        |
+| **Unknown command pattern** | The command does not match any existing policy rule                    |
+| **Autonomy mode boundary**  | The system is in `ASSIST` mode and the action requires `FULL` autonomy |
 
 ### Risk-Based Escalation
 
@@ -99,10 +99,10 @@ When reviewing an escalated action, the operator sees:
 
 The operator can take one of the following actions:
 
-| Action      | Effect                                                    |
-|-------------|-----------------------------------------------------------|
-| **Approve** | The command is released for execution                     |
-| **Reject**  | The command is permanently blocked for this request       |
+| Action                | Effect                                                 |
+| --------------------- | ------------------------------------------------------ |
+| **Approve**           | The command is released for execution                  |
+| **Reject**            | The command is permanently blocked for this request    |
 | **Approve with note** | The command is approved with an attached justification |
 
 Every approval or rejection is recorded as a separate audit log entry, creating a complete chain of accountability.
@@ -111,14 +111,14 @@ Every approval or rejection is recorded as a separate audit log entry, creating 
 
 When a human operator approves an escalated action, this constitutes an override of the normal governance boundary. AtlasBridge tracks all overrides with the following metadata:
 
-| Field            | Description                                              |
-|------------------|----------------------------------------------------------|
-| `escalationId`   | Reference to the original escalation event               |
-| `approver`       | The operator who approved or rejected the action         |
-| `decision`       | `approve` or `reject`                                    |
-| `justification`  | Optional free-text reason provided by the operator       |
-| `timestamp`      | When the override decision was made                      |
-| `originalRisk`   | The risk score that triggered the escalation             |
+| Field           | Description                                        |
+| --------------- | -------------------------------------------------- |
+| `escalationId`  | Reference to the original escalation event         |
+| `approver`      | The operator who approved or rejected the action   |
+| `decision`      | `approve` or `reject`                              |
+| `justification` | Optional free-text reason provided by the operator |
+| `timestamp`     | When the override decision was made                |
+| `originalRisk`  | The risk score that triggered the escalation       |
 
 ### Override Audit Trail
 
@@ -171,19 +171,19 @@ policies:
     riskThreshold: 0.4
     escalation:
       notify: ["ops-team"]
-      timeout: 300  # seconds before auto-reject
+      timeout: 300 # seconds before auto-reject
       requireJustification: true
 ```
 
 ### Configuration Options
 
-| Option                  | Description                                                  | Default   |
-|-------------------------|--------------------------------------------------------------|-----------|
-| `enforcement`           | Set to `escalate` to enable escalation for matching commands | `strict`  |
-| `riskThreshold`         | Risk score above which escalation is triggered               | `0.3`     |
-| `escalation.notify`     | Groups or channels to notify on escalation                   | `[]`      |
-| `escalation.timeout`    | Seconds before an unresolved escalation is auto-rejected     | `600`     |
-| `escalation.requireJustification` | Require the operator to provide a reason for approval | `false`  |
+| Option                            | Description                                                  | Default  |
+| --------------------------------- | ------------------------------------------------------------ | -------- |
+| `enforcement`                     | Set to `escalate` to enable escalation for matching commands | `strict` |
+| `riskThreshold`                   | Risk score above which escalation is triggered               | `0.3`    |
+| `escalation.notify`               | Groups or channels to notify on escalation                   | `[]`     |
+| `escalation.timeout`              | Seconds before an unresolved escalation is auto-rejected     | `600`    |
+| `escalation.requireJustification` | Require the operator to provide a reason for approval        | `false`  |
 
 ## Integration
 

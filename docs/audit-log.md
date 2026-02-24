@@ -14,15 +14,15 @@ The audit log is designed around three constraints:
 
 Each audit log entry contains the following fields:
 
-| Field       | Type      | Description                                                        |
-|-------------|-----------|--------------------------------------------------------------------|
-| `id`        | `string`  | Unique identifier (UUID v4), generated at write time               |
-| `action`    | `string`  | Event type identifier (e.g., `policy.create`, `policy.run.deny`)   |
-| `actor`     | `string`  | The entity that initiated the action (username or agent identifier) |
-| `target`    | `string`  | The resource affected by the action (policy ID, user ID, etc.)     |
-| `details`   | `object`  | Structured metadata specific to the event type                     |
-| `level`     | `string`  | Severity classification: `info`, `warn`, or `error`                |
-| `createdAt` | `timestamp` | Timestamp of the event in UTC                                    |
+| Field       | Type        | Description                                                         |
+| ----------- | ----------- | ------------------------------------------------------------------- |
+| `id`        | `string`    | Unique identifier (UUID v4), generated at write time                |
+| `action`    | `string`    | Event type identifier (e.g., `policy.create`, `policy.run.deny`)    |
+| `actor`     | `string`    | The entity that initiated the action (username or agent identifier) |
+| `target`    | `string`    | The resource affected by the action (policy ID, user ID, etc.)      |
+| `details`   | `object`    | Structured metadata specific to the event type                      |
+| `level`     | `string`    | Severity classification: `info`, `warn`, or `error`                 |
+| `createdAt` | `timestamp` | Timestamp of the event in UTC                                       |
 
 ### Example Entry
 
@@ -45,16 +45,16 @@ Each audit log entry contains the following fields:
 
 The following action types are recorded in the audit log:
 
-| Action                | Level  | Description                                    |
-|-----------------------|--------|------------------------------------------------|
-| `user.register`       | `info` | New user account created                       |
-| `user.login`          | `info` | User authenticated successfully                |
-| `policy.create`       | `info` | New policy created                             |
-| `policy.update`       | `info` | Existing policy modified                       |
-| `policy.delete`       | `warn` | Policy removed from the system                 |
-| `policy.run.allow`    | `info` | Policy evaluation resulted in allow            |
-| `policy.run.deny`     | `warn` | Policy evaluation resulted in deny             |
-| `policy.run.escalate` | `warn` | Policy evaluation triggered escalation         |
+| Action                | Level  | Description                            |
+| --------------------- | ------ | -------------------------------------- |
+| `user.register`       | `info` | New user account created               |
+| `user.login`          | `info` | User authenticated successfully        |
+| `policy.create`       | `info` | New policy created                     |
+| `policy.update`       | `info` | Existing policy modified               |
+| `policy.delete`       | `warn` | Policy removed from the system         |
+| `policy.run.allow`    | `info` | Policy evaluation resulted in allow    |
+| `policy.run.deny`     | `warn` | Policy evaluation resulted in deny     |
+| `policy.run.escalate` | `warn` | Policy evaluation triggered escalation |
 
 Policy deletion events are logged at `warn` level because they alter the governance posture of the system. Deny and escalate decisions are also logged at `warn` level to support filtering for high-priority review.
 

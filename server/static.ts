@@ -15,7 +15,7 @@ export function serveStatic(app: Express) {
     express.static(path.join(distPath, "assets"), {
       maxAge: "1y",
       immutable: true,
-    })
+    }),
   );
 
   app.use(express.static(distPath, { maxAge: "1h" }));

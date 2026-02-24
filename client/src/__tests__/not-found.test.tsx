@@ -10,8 +10,6 @@ describe("NotFound page", () => {
 
   it("renders helpful message", () => {
     render(<NotFound />);
-    expect(
-      screen.getByText(/Did you forget to add the page to the router/),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Did you forget to add the page to the router/)).toBeInTheDocument();
   });
 });

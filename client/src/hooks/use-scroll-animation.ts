@@ -15,7 +15,7 @@ export function useScrollAnimation(threshold = 0.15) {
           observer.unobserve(el);
         }
       },
-      { threshold, rootMargin: "0px 0px -60px 0px" }
+      { threshold, rootMargin: "0px 0px -60px 0px" },
     );
 
     observer.observe(el);
@@ -28,14 +28,17 @@ export function useScrollAnimation(threshold = 0.15) {
 export function useTilt3D(intensity = 8) {
   const ref = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `perspective(800px) rotateY(${x * intensity}deg) rotateX(${-y * intensity}deg) scale3d(1.02, 1.02, 1.02)`;
-  }, [intensity]);
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      el.style.transform = `perspective(800px) rotateY(${x * intensity}deg) rotateX(${-y * intensity}deg) scale3d(1.02, 1.02, 1.02)`;
+    },
+    [intensity],
+  );
 
   const handleMouseLeave = useCallback(() => {
     const el = ref.current;

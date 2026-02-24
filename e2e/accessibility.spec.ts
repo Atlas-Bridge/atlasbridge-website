@@ -4,9 +4,7 @@ import AxeBuilder from "@axe-core/playwright";
 test.describe("Accessibility", () => {
   test("homepage has no critical a11y violations", async ({ page }) => {
     await page.goto("/");
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa"])
-      .analyze();
+    const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
 
     const critical = results.violations.filter(
       (v) => v.impact === "critical" || v.impact === "serious",
@@ -18,9 +16,7 @@ test.describe("Accessibility", () => {
     await page.goto("/docs");
     // Wait for lazy-loaded content
     await page.waitForTimeout(1000);
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa"])
-      .analyze();
+    const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
 
     const critical = results.violations.filter(
       (v) => v.impact === "critical" || v.impact === "serious",

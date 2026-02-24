@@ -57,15 +57,15 @@ Relevant framework areas:
 
 The following capabilities may contribute to compliance programs:
 
-| Capability | Description |
-|---|---|
-| Deterministic policy evaluation | Same input and policy version produce the same decision, supporting reproducibility and evidence gathering |
-| Append-only audit log | Chronological record of all governance actions, exportable in CSV format |
-| Role-based access control | Dashboard access restricted by user role (viewer, admin) |
-| Escalation with approval tracking | High-risk actions require explicit human approval with recorded rationale |
-| Fail-closed default | Unmatched commands are denied, preventing unauthorized actions |
-| Local-first execution | Policy evaluation occurs locally without transmitting sensitive data externally |
-| Policy versioning | Policies can be reviewed, tested, and tracked over time |
+| Capability                        | Description                                                                                                |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Deterministic policy evaluation   | Same input and policy version produce the same decision, supporting reproducibility and evidence gathering |
+| Append-only audit log             | Chronological record of all governance actions, exportable in CSV format                                   |
+| Role-based access control         | Dashboard access restricted by user role (viewer, admin)                                                   |
+| Escalation with approval tracking | High-risk actions require explicit human approval with recorded rationale                                  |
+| Fail-closed default               | Unmatched commands are denied, preventing unauthorized actions                                             |
+| Local-first execution             | Policy evaluation occurs locally without transmitting sensitive data externally                            |
+| Policy versioning                 | Policies can be reviewed, tested, and tracked over time                                                    |
 
 ## What AtlasBridge Does Not Provide
 

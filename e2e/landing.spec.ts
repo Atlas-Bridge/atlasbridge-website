@@ -23,7 +23,9 @@ test.describe("Landing page", () => {
     await page.goto("/");
 
     // Find primary CTA buttons in the hero section
-    const ctaButtons = page.locator("a, button").filter({ hasText: /get started|documentation|learn more|try it/i });
+    const ctaButtons = page
+      .locator("a, button")
+      .filter({ hasText: /get started|documentation|learn more|try it/i });
     const count = await ctaButtons.count();
     expect(count).toBeGreaterThan(0);
 

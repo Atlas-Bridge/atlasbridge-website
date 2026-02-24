@@ -89,16 +89,16 @@ cloud:
 
 ### Configuration Fields
 
-| Field | Description |
-|-------|-------------|
-| `enabled` | Whether cloud observe mode is active. Defaults to `false`. |
-| `endpoint` | The HTTPS URL of the cloud observe endpoint. |
-| `api_key_env` | Name of the environment variable containing the API key. The key itself is never stored in the configuration file. |
-| `transmit.*` | Controls which data categories are transmitted. Each can be independently enabled or disabled. |
+| Field                | Description                                                                                                                         |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`            | Whether cloud observe mode is active. Defaults to `false`.                                                                          |
+| `endpoint`           | The HTTPS URL of the cloud observe endpoint.                                                                                        |
+| `api_key_env`        | Name of the environment variable containing the API key. The key itself is never stored in the configuration file.                  |
+| `transmit.*`         | Controls which data categories are transmitted. Each can be independently enabled or disabled.                                      |
 | `redaction.commands` | When `true`, command strings are hashed before transmission. The cloud endpoint receives a hash rather than the plain text command. |
-| `redaction.targets` | When `true`, target identifiers in audit events are hashed before transmission. |
-| `interval_seconds` | How frequently telemetry is batched and transmitted. Defaults to `30`. |
-| `retry.*` | Retry behavior when transmission fails. Failed transmissions do not affect local operation. |
+| `redaction.targets`  | When `true`, target identifiers in audit events are hashed before transmission.                                                     |
+| `interval_seconds`   | How frequently telemetry is batched and transmitted. Defaults to `30`.                                                              |
+| `retry.*`            | Retry behavior when transmission fails. Failed transmissions do not affect local operation.                                         |
 
 ## Security Considerations
 

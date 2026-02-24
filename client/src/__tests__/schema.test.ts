@@ -1,9 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  insertUserSchema,
-  insertPolicySchema,
-  insertAuditLogSchema,
-} from "@shared/schema";
+import { insertUserSchema, insertPolicySchema, insertAuditLogSchema } from "@shared/schema";
 
 describe("insertUserSchema", () => {
   it("accepts valid user input", () => {

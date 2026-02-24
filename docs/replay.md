@@ -120,15 +120,15 @@ Unchanged: 12 rules
 
 ## Current Implementation Status
 
-| Feature                       | Status      |
-|-------------------------------|-------------|
-| Audit log query and ordering  | Implemented |
-| Session trace reconstruction  | Implemented |
-| Deterministic re-evaluation   | Roadmap     |
-| Counterfactual evaluation     | Roadmap     |
-| Policy version comparison     | Roadmap     |
-| Replay CLI command            | Roadmap     |
-| Replay dashboard view         | Roadmap     |
+| Feature                      | Status      |
+| ---------------------------- | ----------- |
+| Audit log query and ordering | Implemented |
+| Session trace reconstruction | Implemented |
+| Deterministic re-evaluation  | Roadmap     |
+| Counterfactual evaluation    | Roadmap     |
+| Policy version comparison    | Roadmap     |
+| Replay CLI command           | Roadmap     |
+| Replay dashboard view        | Roadmap     |
 
 Session trace reconstruction is available through the audit log query interface. Full deterministic replay with re-evaluation and counterfactual analysis is planned for a future release.
 
