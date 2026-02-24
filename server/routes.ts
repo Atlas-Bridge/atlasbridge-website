@@ -56,7 +56,11 @@ export async function registerRoutes(app: Express): Promise<void> {
     }
   });
 
-  // Session middleware and authenticated routes below — require DATABASE_URL
+  // Authenticated routes require DATABASE_URL for session store and data access.
+  // When DATABASE_URL is not configured (e.g., docs-only Vercel deployment),
+  // only the docs routes above are available.
+  if (!process.env.DATABASE_URL) return;
+
   app.use(
     session({
       store: new PgSession({
