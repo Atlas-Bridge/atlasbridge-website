@@ -165,7 +165,6 @@ export default function Docs() {
                     <ol className="my-5 ml-6 space-y-2.5 list-decimal" {...props}>{children}</ol>
                   ),
                   li: ({ children, node, ...props }) => {
-                    const isOrdered = node?.position && (props as any).ordered !== undefined;
                     const parent = (node as any)?.parentNode?.tagName;
                     if (parent === "ol" || (props as any).index !== undefined) {
                       return <li className="text-[15px] sm:text-base text-[#0B2A3C]/80 leading-[1.8] pl-1.5" {...props}>{children}</li>;
