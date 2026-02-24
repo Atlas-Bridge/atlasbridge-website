@@ -3,7 +3,16 @@ import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "wouter";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ShieldCheck, ArrowLeft, BookOpen, ChevronRight, Menu, X } from "lucide-react";
+import {
+  ShieldCheck,
+  ArrowLeft,
+  BookOpen,
+  ChevronRight,
+  Menu,
+  X,
+  AlertCircle,
+  RefreshCw,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const DOC_ORDER = [
@@ -25,6 +34,7 @@ const DOC_ORDER = [
   "security",
   "compliance-alignment",
   "enterprise-guide",
+  "troubleshooting",
   "faq",
   "glossary",
 ];
@@ -49,6 +59,7 @@ function slugToTitle(slug: string) {
     security: "Security",
     "compliance-alignment": "Compliance Alignment",
     "enterprise-guide": "Enterprise Guide",
+    troubleshooting: "Troubleshooting",
     faq: "FAQ",
     glossary: "Glossary",
   };
@@ -60,14 +71,23 @@ export default function Docs() {
   const slug = params.slug || "index";
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const { data: doc, isLoading } = useQuery<{ slug: string; content: string }>({
+  const {
+    data: doc,
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useQuery<{ slug: string; content: string }>({
     queryKey: [`/api/docs/${slug}`],
+    retry: 1,
   });
 
   useEffect(() => {
     setSidebarOpen(false);
     window.scrollTo(0, 0);
   }, [slug]);
+
+  const is404 = isError && error?.message?.startsWith("404");
 
   return (
     <div className="min-h-screen bg-[#F5F7F9] font-sans">
@@ -155,6 +175,43 @@ export default function Docs() {
               <div className="h-4 bg-gray-200 rounded w-5/6" />
               <div className="h-4 bg-gray-200 rounded w-4/6" />
             </div>
+          ) : isError ? (
+            is404 ? (
+              <div className="text-center py-20 max-w-md mx-auto">
+                <BookOpen className="h-12 w-12 mx-auto mb-4 text-[#64707C] opacity-40" />
+                <h3 className="text-lg font-bold text-[#0B2A3C] mb-2">Document not found</h3>
+                <p className="text-sm text-[#64707C] mb-6">
+                  The page <code className="bg-gray-100 px-1.5 py-0.5 rounded text-xs">{slug}</code>{" "}
+                  does not exist in the documentation.
+                </p>
+                <Link href="/docs">
+                  <Button
+                    className="bg-[#1F8A8C] hover:bg-[#1a7577] text-white"
+                    data-testid="link-back-docs"
+                  >
+                    Back to Documentation
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              <div className="text-center py-20 max-w-md mx-auto">
+                <AlertCircle className="h-12 w-12 mx-auto mb-4 text-amber-500 opacity-60" />
+                <h3 className="text-lg font-bold text-[#0B2A3C] mb-2">
+                  Unable to load documentation
+                </h3>
+                <p className="text-sm text-[#64707C] mb-6">
+                  The documentation server could not be reached. This may be a temporary issue.
+                </p>
+                <Button
+                  onClick={() => refetch()}
+                  className="bg-[#1F8A8C] hover:bg-[#1a7577] text-white"
+                  data-testid="button-retry-docs"
+                >
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  Retry
+                </Button>
+              </div>
+            )
           ) : doc ? (
             <article className="docs-article max-w-3xl">
               <ReactMarkdown
@@ -162,7 +219,7 @@ export default function Docs() {
                 components={{
                   h1: ({ children, ...props }) => (
                     <h1
-                      className="text-3xl sm:text-4xl font-extrabold text-[#0B2A3C] tracking-tight pb-5 mb-8 border-b-2 border-gray-200"
+                      className="text-[1.875rem] sm:text-4xl font-extrabold text-[#0B2A3C] tracking-tight pb-5 mb-10 border-b-2 border-gray-200"
                       {...props}
                     >
                       {children}
@@ -170,7 +227,7 @@ export default function Docs() {
                   ),
                   h2: ({ children, ...props }) => (
                     <h2
-                      className="text-xl sm:text-2xl font-bold text-[#0B2A3C] tracking-tight mt-14 mb-5 pb-3 border-b border-gray-100"
+                      className="text-[1.375rem] sm:text-[1.625rem] font-bold text-[#0B2A3C] tracking-tight mt-14 mb-6 pb-3 border-b border-gray-100"
                       {...props}
                     >
                       {children}
@@ -186,7 +243,7 @@ export default function Docs() {
                   ),
                   h4: ({ children, ...props }) => (
                     <h4
-                      className="text-base sm:text-lg font-semibold text-[#0B2A3C] mt-8 mb-3"
+                      className="text-base sm:text-lg font-semibold text-[#0B2A3C]/90 mt-8 mb-3"
                       {...props}
                     >
                       {children}
@@ -194,7 +251,7 @@ export default function Docs() {
                   ),
                   p: ({ children, ...props }) => (
                     <p
-                      className="text-[15px] sm:text-base text-[#0B2A3C]/80 leading-[1.85] mb-5"
+                      className="text-[15px] sm:text-base text-[#0B2A3C]/80 leading-[1.9] mb-6"
                       {...props}
                     >
                       {children}
@@ -212,9 +269,25 @@ export default function Docs() {
                         </Link>
                       );
                     }
+                    if (href && !href.startsWith("./") && !href.endsWith(".md")) {
+                      const mdMatch = href.match(/^([a-z0-9-]+)\.md$/);
+                      if (mdMatch) {
+                        const docSlug = mdMatch[1];
+                        return (
+                          <Link
+                            href={docSlug === "index" ? "/docs" : `/docs/${docSlug}`}
+                            className="text-[#157173] font-medium hover:underline underline-offset-2"
+                          >
+                            {children}
+                          </Link>
+                        );
+                      }
+                    }
                     return (
                       <a
                         href={href}
+                        target={href?.startsWith("http") ? "_blank" : undefined}
+                        rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="text-[#157173] font-medium hover:underline underline-offset-2"
                         {...props}
                       >
@@ -223,12 +296,12 @@ export default function Docs() {
                     );
                   },
                   ul: ({ children, ...props }) => (
-                    <ul className="my-5 ml-1 space-y-2.5 list-none" {...props}>
+                    <ul className="my-6 ml-1 space-y-2.5 list-none" {...props}>
                       {children}
                     </ul>
                   ),
                   ol: ({ children, ...props }) => (
-                    <ol className="my-5 ml-6 space-y-2.5 list-decimal" {...props}>
+                    <ol className="my-6 ml-6 space-y-2.5 list-decimal" {...props}>
                       {children}
                     </ol>
                   ),
@@ -273,7 +346,7 @@ export default function Docs() {
                   },
                   pre: ({ children, ...props }) => (
                     <pre
-                      className="bg-[#0B2A3C] text-[#e2e8f0] rounded-xl shadow-lg p-5 sm:p-6 my-7 overflow-x-auto leading-relaxed"
+                      className="bg-[#0B2A3C] text-[#e2e8f0] rounded-xl shadow-lg p-5 sm:p-6 my-8 overflow-x-auto leading-relaxed"
                       {...props}
                     >
                       {children}
@@ -281,7 +354,7 @@ export default function Docs() {
                   ),
                   blockquote: ({ children, ...props }) => (
                     <blockquote
-                      className="border-l-4 border-[#1F8A8C] bg-[#1F8A8C]/[0.04] rounded-r-xl py-4 px-5 sm:px-6 my-7 [&>p]:mb-0 [&>p]:text-[#0B2A3C]/70"
+                      className="border-l-4 border-[#1F8A8C] bg-[#1F8A8C]/[0.04] rounded-r-xl py-4 px-5 sm:px-6 my-8 [&>p]:mb-0 [&>p]:text-[#0B2A3C]/70"
                       {...props}
                     >
                       {children}
@@ -315,7 +388,7 @@ export default function Docs() {
                       {children}
                     </td>
                   ),
-                  hr: ({ ...props }) => <hr className="my-10 border-gray-200" {...props} />,
+                  hr: ({ ...props }) => <hr className="my-12 border-gray-200" {...props} />,
                   strong: ({ children, ...props }) => (
                     <strong className="font-bold text-[#0B2A3C]" {...props}>
                       {children}

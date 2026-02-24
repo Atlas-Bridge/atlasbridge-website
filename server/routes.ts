@@ -226,8 +226,16 @@ export async function registerRoutes(app: Express): Promise<void> {
     res.json(logs);
   });
 
+  function resolveDocsDir(): string {
+    const candidates = [path.resolve(process.cwd(), "docs"), path.resolve(__dirname, "..", "docs")];
+    for (const dir of candidates) {
+      if (fs.existsSync(dir)) return dir;
+    }
+    return candidates[0];
+  }
+
   app.get("/api/docs", (_req, res) => {
-    const docsDir = path.resolve(process.cwd(), "docs");
+    const docsDir = resolveDocsDir();
     try {
       const files = fs
         .readdirSync(docsDir)
@@ -247,7 +255,7 @@ export async function registerRoutes(app: Express): Promise<void> {
   });
 
   app.get("/api/docs/:slug", (req, res) => {
-    const docsDir = path.resolve(process.cwd(), "docs");
+    const docsDir = resolveDocsDir();
     const slug = req.params.slug.replace(/[^a-z0-9-]/gi, "");
     const filePath = path.join(docsDir, `${slug}.md`);
     try {

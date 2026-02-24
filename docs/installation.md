@@ -31,7 +31,7 @@ pip install atlasbridge==0.8.0
 To install from source:
 
 ```bash
-git clone https://github.com/atlasbridge/atlasbridge.git
+git clone https://github.com/Atlas-Bridge/atlasbridge.git
 cd atlasbridge
 pip install -e .
 ```

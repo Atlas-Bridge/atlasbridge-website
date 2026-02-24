@@ -4,6 +4,62 @@ The AtlasBridge dashboard is a web-based operator console that provides visibili
 
 The dashboard connects to the same PostgreSQL database used by the CLI and runtime, providing a consistent view of all governance data.
 
+## Setup and Access
+
+### Prerequisites
+
+Before accessing the dashboard, ensure the following are in place:
+
+- A running PostgreSQL 14+ instance
+- The `DATABASE_URL` environment variable set to your PostgreSQL connection string
+- Node.js 18 or later installed
+
+### Running the Dashboard Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Atlas-Bridge/atlasbridge.git
+cd atlasbridge
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the project root with your database connection:
+
+```bash
+DATABASE_URL=postgresql://user:password@localhost:5432/atlasbridge
+SESSION_SECRET=your-session-secret
+```
+
+4. Push the database schema:
+
+```bash
+npm run db:push
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+```
+
+The dashboard is now accessible at `http://localhost:3000`. Navigate to `/login` to create an account or sign in.
+
+### Accessing the Hosted Dashboard
+
+If your organization has deployed AtlasBridge to a hosted environment (e.g., Vercel), access the dashboard at your configured domain. Contact your administrator for the URL and credentials.
+
+### First-Time Setup
+
+1. Navigate to the login page and click **Register** to create your first account.
+2. The first registered user receives **admin** privileges by default.
+3. After registration, you are automatically signed in and redirected to the dashboard overview.
+
 ## Authentication
 
 Access to the dashboard requires authentication. Users register with a username and password, and sessions are maintained server-side using secure, HTTP-only cookies. Role-based access control determines which operations a user can perform.
