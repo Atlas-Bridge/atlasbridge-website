@@ -33,12 +33,17 @@ async function buildVercel() {
     },
     minify: true,
     logLevel: "info",
-    // Banner: polyfill __dirname / __filename for ESM
-    // (routes.ts uses __dirname in resolveDocsDir)
+    // Banner: provide require() and __dirname for ESM output.
+    // Many bundled CJS packages (express, pg, debug, etc.) emit
+    // require() calls for Node.js built-ins. ESM has no require(),
+    // so we polyfill it via createRequire. Also polyfill __dirname
+    // which routes.ts uses in resolveDocsDir.
     banner: {
       js: [
+        'import{createRequire as _cR}from"module";',
         'import{fileURLToPath as _fU}from"url";',
         'import{dirname as _dN}from"path";',
+        "const require=_cR(import.meta.url);",
         "const __filename=_fU(import.meta.url);",
         "const __dirname=_dN(__filename);",
       ].join(""),
