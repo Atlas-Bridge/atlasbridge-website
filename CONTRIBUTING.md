@@ -12,7 +12,7 @@
 
 ```bash
 npm install
-npm run dev          # Start dev server on http://localhost:5000
+npm run dev          # Start dev server on http://localhost:3000
 ```
 
 ### Available Scripts
