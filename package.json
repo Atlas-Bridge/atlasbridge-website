@@ -9,7 +9,7 @@
     "build": "tsx script/build.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 50",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "test": "vitest run",
