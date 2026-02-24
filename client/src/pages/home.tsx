@@ -871,7 +871,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">
+              <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/50">
                 Resources
               </h5>
               <ul className="space-y-3 sm:space-y-4 text-sm text-[#94A3B3]">
@@ -899,7 +899,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/40">
+              <h5 className="font-bold mb-4 sm:mb-6 uppercase text-xs tracking-widest text-white/50">
                 Legal
               </h5>
               <ul className="space-y-3 sm:space-y-4 text-sm text-[#94A3B3]">
