@@ -60,9 +60,7 @@ export async function registerRoutes(app: Express): Promise<void> {
       const unlisted = [...available].filter((s) => !DOC_ORDER.includes(s)).sort();
       const docs = [...ordered, ...unlisted].map((slug) => ({
         slug,
-        title: slug
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (c) => c.toUpperCase()),
+        title: slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
       }));
       res.json(docs);
     } catch {
