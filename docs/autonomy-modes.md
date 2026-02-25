@@ -14,14 +14,14 @@ AtlasBridge operates in one of three autonomy modes that determine how much inde
 
 In `OFF` mode, the agent has no autonomous execution capability. Every command submitted by the agent is held for human review, regardless of risk score or policy evaluation.
 
-**Behavior:**
+**Behaviour:**
 
 - All commands are queued for human approval.
-- No command executes without explicit human authorization.
+- No command executes without explicit human authorisation.
 - Policy evaluation still runs; results are logged but not acted upon.
 - Risk scores are computed and recorded for audit purposes.
 
-**Use case:** Initial deployment, high-security environments, or situations where full human control is required. This mode provides complete visibility into agent behavior before granting any autonomy.
+**Use case:** Initial deployment, high-security environments, or situations where full human control is required. This mode provides complete visibility into agent behaviour before granting any autonomy.
 
 ```
 Agent submits command
@@ -45,7 +45,7 @@ Agent submits command
 
 In `ASSIST` mode, the agent can autonomously execute commands classified as low risk (score 0–25). All other commands are escalated for human review.
 
-**Behavior:**
+**Behaviour:**
 
 - Low-risk commands (0–25): Executed automatically if permitted by policy.
 - Medium-risk commands (26–50): Escalated for human approval.
@@ -77,14 +77,14 @@ Agent submits command
 
 In `FULL` mode, the agent can autonomously execute commands classified as low or medium risk. High-risk commands are escalated, and critical-risk commands are denied.
 
-**Behavior:**
+**Behaviour:**
 
 - Low-risk commands (0–25): Executed automatically if permitted by policy.
 - Medium-risk commands (26–50): Executed automatically if permitted by policy.
 - High-risk commands (51–75): Escalated for human approval.
 - Critical-risk commands (76–100): Denied outright.
 
-**Use case:** Trusted environments where the agent has demonstrated reliable behavior and the operator is comfortable with a broader execution scope. Typically used in development environments or with well-tested policy sets.
+**Use case:** Trusted environments where the agent has demonstrated reliable behaviour and the operator is comfortable with a broader execution scope. Typically used in development environments or with well-tested policy sets.
 
 ```
 Agent submits command
@@ -157,8 +157,8 @@ The autonomy mode is a system-level setting. Changing the mode:
 
 ## Recommendations
 
-- Start with `OFF` mode when deploying AtlasBridge for the first time. Review agent behavior through the audit log before increasing autonomy.
-- Move to `ASSIST` mode after establishing confidence in the policy set and agent behavior patterns.
+- Start with `OFF` mode when deploying AtlasBridge for the first time. Review agent behaviour through the audit log before increasing autonomy.
+- Move to `ASSIST` mode after establishing confidence in the policy set and agent behaviour patterns.
 - Use `FULL` mode only in environments with well-tested policies and established trust in the agent's operational scope.
 - In production environments, `ASSIST` mode is generally the appropriate default.
 

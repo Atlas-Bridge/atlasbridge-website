@@ -14,7 +14,7 @@ AtlasBridge takes a different approach. Every agent command is evaluated against
 
 The AtlasBridge governance model consists of four components:
 
-1. **Policy definitions** — structured rules that classify agent commands and assign enforcement behavior
+1. **Policy definitions** — structured rules that classify agent commands and assign enforcement behaviour
 2. **Risk classification** — a scoring mechanism that evaluates the potential impact of a command based on its properties
 3. **Escalation paths** — defined workflows for commands that require human review before execution
 4. **Audit records** — append-only logs that capture every evaluation, decision, and override
@@ -29,7 +29,7 @@ Policies in AtlasBridge are explicit, versioned, and human-readable. Each policy
 - An enforcement mode (`strict`, `warn`, or `escalate`)
 - Enablement state
 
-Policies are not inferred or learned. They are authored by operators and applied consistently. This ensures that governance behavior is predictable and reviewable.
+Policies are not inferred or learned. They are authored by operators and applied consistently. This ensures that governance behaviour is predictable and reviewable.
 
 See [Policy Engine](./policy-engine.md) for details on the policy DSL and evaluation logic.
 
@@ -39,7 +39,7 @@ AtlasBridge supports human-in-the-loop decision-making through its escalation me
 
 Override decisions are recorded in the audit log with the identity of the approver and any attached rationale. This creates a traceable chain of accountability for every action that deviates from automated policy evaluation.
 
-Overrides do not modify the underlying policy. They represent a one-time exception for a specific command in a specific context. To change ongoing behavior, operators modify the policy definitions directly.
+Overrides do not modify the underlying policy. They represent a one-time exception for a specific command in a specific context. To change ongoing behaviour, operators modify the policy definitions directly.
 
 See [Escalation](./escalation.md) for details on escalation triggers and approval workflows.
 
@@ -49,9 +49,9 @@ AtlasBridge defines clear boundaries around what an agent is permitted to do:
 
 - **Local execution** — all policy evaluation and decision-making occurs locally, within the operator's infrastructure. No commands are sent to external services for evaluation.
 - **No implicit permissions** — an agent has no default authority to execute commands. All permissions are granted through explicit policy rules.
-- **Fail-closed behavior** — if no policy matches a command, the default behavior is to deny execution. This prevents unclassified commands from bypassing governance.
+- **Fail-closed behaviour** — if no policy matches a command, the default behaviour is to deny execution. This prevents unclassified commands from bypassing governance.
 
-These boundaries ensure that the governance system cannot be circumvented by novel or unexpected agent behavior.
+These boundaries ensure that the governance system cannot be circumvented by novel or unexpected agent behaviour.
 
 ## Why Determinism Matters
 
@@ -63,7 +63,7 @@ Deterministic evaluation provides several properties that are difficult to achie
 
 **Predictability.** Operators can reason about how the system will behave in specific scenarios. This is critical when governing agents that interact with production infrastructure.
 
-**Testability.** Policies can be validated against test cases before deployment. Operators can verify that a policy change produces the expected behavior without running it in production.
+**Testability.** Policies can be validated against test cases before deployment. Operators can verify that a policy change produces the expected behaviour without running it in production.
 
 ## Governance Metrics
 

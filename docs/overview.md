@@ -8,7 +8,7 @@ The runtime operates on a local-first execution model. All policy evaluation, ri
 
 AtlasBridge uses a deterministic policy model. Given the same input (agent command, policy version, environment context), the system produces the same evaluation result every time. This property is fundamental to auditability: reviewers can verify that a decision was correct by replaying the same inputs against the same policy and confirming the output matches.
 
-The system supports structured human-in-the-loop escalation. When an agent action exceeds its authorized scope — as defined by policy rules, risk thresholds, or operational boundaries — execution pauses automatically and the decision is routed to a human operator through a configured channel (e.g., Telegram). The operator can approve, deny, or modify the action, and the decision is recorded in the audit log.
+The system supports structured human-in-the-loop escalation. When an agent action exceeds its authorised scope — as defined by policy rules, risk thresholds, or operational boundaries — execution pauses automatically and the decision is routed to a human operator through a configured channel (e.g., Telegram). The operator can approve, deny, or modify the action, and the decision is recorded in the audit log.
 
 ## What AtlasBridge Is Not
 
@@ -26,9 +26,9 @@ AtlasBridge is not a black-box hosted service. The policy evaluation logic is tr
 
 **Deterministic evaluation.** Policy decisions are reproducible. The same inputs always produce the same output, enabling verification, replay, and audit.
 
-**Policy-driven control.** Agent behavior is governed by explicit, human-readable policy rules — not by probabilistic model outputs or opaque heuristics.
+**Policy-driven control.** Agent behaviour is governed by explicit, human-readable policy rules — not by probabilistic model outputs or opaque heuristics.
 
-**Structured escalation.** When actions fall outside authorized scope, execution pauses and a human operator is consulted. Escalation is a first-class mechanism, not an error state.
+**Structured escalation.** When actions fall outside authorised scope, execution pauses and a human operator is consulted. Escalation is a first-class mechanism, not an error state.
 
 **Audit traceability.** Every evaluation, decision, escalation, and override is recorded in an append-only log. The audit trail is the system of record for all governance activity.
 

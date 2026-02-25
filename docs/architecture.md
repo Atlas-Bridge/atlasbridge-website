@@ -185,7 +185,7 @@ See [Audit Log](./audit-log.md) for event structure and export formats.
 
 The replay system enables deterministic re-evaluation of historical sessions. Given a recorded session trace and a policy version, the replay engine re-executes the evaluation pipeline and produces the same sequence of decisions. This supports:
 
-- Post-incident review of agent behavior
+- Post-incident review of agent behaviour
 - Policy change impact analysis (counterfactual evaluation)
 - Governance verification and testing
 

@@ -72,7 +72,7 @@ export default function Terms() {
             </p>
             <p className="mt-3">
               AtlasBridge is a governance tool intended to assist with policy enforcement and
-              auditability. It does not guarantee the prevention of unauthorized actions or security
+              auditability. It does not guarantee the prevention of unauthorised actions or security
               incidents. Users are responsible for evaluating the suitability of the software for
               their specific use cases.
             </p>
