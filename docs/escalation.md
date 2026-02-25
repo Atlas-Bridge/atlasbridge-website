@@ -34,7 +34,7 @@ The exact thresholds are configurable per policy. The ranges above are illustrat
 
 ### Policy-Based Escalation
 
-Policies with `enforcement: "escalate"` route all matching commands to human review regardless of risk score. This is useful for categories of commands where organizational policy requires human sign-off regardless of technical risk:
+Policies with `enforcement: "escalate"` route all matching commands to human review regardless of risk score. This is useful for categories of commands where organisational policy requires human sign-off regardless of technical risk:
 
 ```yaml
 - name: "production-deployments"
@@ -73,7 +73,7 @@ Operator reviews command + context
         └── REJECT  → Command blocked, rejection logged
 ```
 
-### Pause Behavior
+### Pause Behaviour
 
 When an action is escalated:
 
@@ -146,7 +146,7 @@ The escalation graph provides a visual representation of escalation patterns acr
 
 The escalation graph helps operators answer questions such as:
 
-- Are escalation rates increasing over time, suggesting policy drift or changing agent behavior?
+- Are escalation rates increasing over time, suggesting policy drift or changing agent behaviour?
 - Are specific policies generating excessive escalations, indicating they may need tuning?
 - Are certain agents consistently triggering escalations, suggesting misconfiguration or scope creep?
 - Is the mean response time for human approval acceptable, or is it creating operational bottlenecks?
@@ -161,7 +161,7 @@ Escalation metrics are surfaced in the [Dashboard](./dashboard.md) governance ov
 
 ## Escalation Configuration
 
-Escalation behavior is configured at the policy level:
+Escalation behaviour is configured at the policy level:
 
 ```yaml
 policies:
@@ -190,7 +190,7 @@ policies:
 - Escalation decisions are recorded in the [Audit Log](./audit-log.md).
 - Risk scores that trigger escalation are computed by the [Risk Engine](./risk-engine.md).
 - Escalation thresholds are defined in the [Policy Engine](./policy-engine.md).
-- Escalation behavior varies by [Autonomy Mode](./autonomy-modes.md) — in `OFF` mode, all actions are effectively escalated; in `FULL` mode, only high-risk actions trigger escalation.
+- Escalation behaviour varies by [Autonomy Mode](./autonomy-modes.md) — in `OFF` mode, all actions are effectively escalated; in `FULL` mode, only high-risk actions trigger escalation.
 - Escalation events appear in the [Replay](./replay.md) session trace.
 
 ---

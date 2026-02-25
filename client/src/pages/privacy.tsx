@@ -83,7 +83,7 @@ export default function Privacy() {
             <p>
               Any data collected through this website is stored using industry-standard security
               measures. AtlasBridge takes reasonable precautions to protect information from
-              unauthorized access, use, or disclosure. However, no method of transmission over the
+              unauthorised access, use, or disclosure. However, no method of transmission over the
               internet is completely secure.
             </p>
           </section>

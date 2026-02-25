@@ -6,7 +6,7 @@ The AtlasBridge policy engine is a deterministic rule evaluation system that gov
 
 - **Deterministic evaluation**: Given the same input and policy set, the engine always produces the same decision.
 - **Local execution**: Policy evaluation runs entirely on the local machine. No external service is consulted during evaluation.
-- **Fail-closed**: If no matching rule is found, the default behavior is to deny execution and escalate for human review.
+- **Fail-closed**: If no matching rule is found, the default behaviour is to deny execution and escalate for human review.
 
 ## Policy Structure
 
@@ -122,7 +122,7 @@ There is no implicit priority weighting. Rule order is the sole determinant of p
 
 ## Default Fallback
 
-If no rule in any active policy matches the submitted command, AtlasBridge applies a default `deny` decision. This ensures that unrecognized or novel commands are never silently permitted.
+If no rule in any active policy matches the submitted command, AtlasBridge applies a default `deny` decision. This ensures that unrecognised or novel commands are never silently permitted.
 
 The default fallback also generates an audit log entry and, depending on the autonomy mode, may trigger escalation. See [Autonomy Modes](autonomy-modes.md).
 

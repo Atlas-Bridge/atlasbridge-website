@@ -59,7 +59,7 @@ Policies are the primary security control in AtlasBridge. To ensure their correc
 - **Enforcement modes** — policies specify an enforcement mode (`strict`, `warn`, `escalate`) that determines how matches are handled. This allows operators to introduce new policies in observation mode before enforcing them.
 - **Enable/disable controls** — individual policies can be disabled without deletion, allowing operators to quickly respond to misconfigurations.
 
-Operators should test policy changes against historical audit data before deploying them to production. The deterministic evaluation model ensures that test results are representative of production behavior.
+Operators should test policy changes against historical audit data before deploying them to production. The deterministic evaluation model ensures that test results are representative of production behaviour.
 
 ## Risk Containment
 
@@ -87,7 +87,7 @@ For production deployments, operators should:
 - Deploy AtlasBridge behind a reverse proxy with TLS termination
 - Restrict dashboard access to trusted networks or VPN
 - Configure appropriate CORS policies if the dashboard is accessed from a different origin
-- Monitor access logs for unauthorized access attempts
+- Monitor access logs for unauthorised access attempts
 
 ## Limitations
 
@@ -95,7 +95,7 @@ AtlasBridge governs agent commands at the policy evaluation layer. It does not:
 
 - Sandbox agent execution at the operating system level
 - Provide network-level isolation between agents
-- Inspect the runtime behavior of executed commands after approval
+- Inspect the runtime behaviour of executed commands after approval
 - Guarantee that an agent cannot bypass the governance layer if it has direct access to the underlying system
 
 Operators should deploy AtlasBridge as one component of a defense-in-depth strategy that includes OS-level access controls, network segmentation, and monitoring.

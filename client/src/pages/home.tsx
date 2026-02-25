@@ -106,7 +106,7 @@ function TerminalTyping() {
 
   const termLines = [
     { text: "atlasbridge run claude --policy strict", cls: "text-white break-all sm:break-normal" },
-    { text: "[SYSTEM] Supervisor initialized.", cls: "opacity-70" },
+    { text: "[SYSTEM] Supervisor initialised.", cls: "opacity-70" },
     { text: "[POLICY] Mode: ASSIST", cls: "opacity-70" },
     { text: "[TRACE] Local execution boundary verified.", cls: "opacity-70" },
     {

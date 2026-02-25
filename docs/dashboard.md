@@ -52,7 +52,7 @@ The dashboard is now accessible at `http://localhost:3000`. Navigate to `/login`
 
 ### Accessing the Hosted Dashboard
 
-If your organization has deployed AtlasBridge to a hosted environment (e.g., Vercel), access the dashboard at your configured domain. Contact your administrator for the URL and credentials.
+If your organisation has deployed AtlasBridge to a hosted environment (e.g., Vercel), access the dashboard at your configured domain. Contact your administrator for the URL and credentials.
 
 ### First-Time Setup
 
@@ -125,8 +125,8 @@ The policy creation dialog collects:
 
 - **Policy Name** — A descriptive identifier (e.g., "File System Access Control").
 - **Description** — An explanation of what the policy governs and its intended scope.
-- **Enforcement Mode** — The enforcement behavior when a violation is detected.
-- **Rules** — The rule set is initialized as empty and can be configured after creation.
+- **Enforcement Mode** — The enforcement behaviour when a violation is detected.
+- **Rules** — The rule set is initialised as empty and can be configured after creation.
 
 Policy creation and modification events are recorded in the audit log with the actor, target, and timestamp.
 

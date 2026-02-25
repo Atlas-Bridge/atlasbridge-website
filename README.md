@@ -193,7 +193,7 @@ Contributors must ensure:
 
 ## Brand and Asset Usage
 
-Brand assets are located in the `brand/` directory, organized by format:
+Brand assets are located in the `brand/` directory, organised by format:
 
 - `brand/svg/` — Vector logos and icons
 - `brand/png/` — Raster logos, wordmarks, and icons

@@ -1,20 +1,20 @@
 # Compliance Alignment
 
-AtlasBridge provides governance workflows and audit capabilities that may support organizations in their compliance efforts. This document describes how specific features of AtlasBridge align with common compliance frameworks and where they may contribute to broader compliance programs.
+AtlasBridge provides governance workflows and audit capabilities that may support organisations in their compliance efforts. This document describes how specific features of AtlasBridge align with common compliance frameworks and where they may contribute to broader compliance programs.
 
-**Important:** AtlasBridge is not a compliance product and does not certify, guarantee, or ensure compliance with any regulatory framework or standard. Compliance is an organizational responsibility that encompasses people, processes, and technology. AtlasBridge is one component that may contribute to a compliance program when deployed and operated appropriately.
+**Important:** AtlasBridge is not a compliance product and does not certify, guarantee, or ensure compliance with any regulatory framework or standard. Compliance is an organisational responsibility that encompasses people, processes, and technology. AtlasBridge is one component that may contribute to a compliance program when deployed and operated appropriately.
 
 ## Governance Controls and Compliance Workflows
 
 The following sections describe how AtlasBridge features relate to control objectives found in common compliance frameworks. These mappings are informational and do not constitute compliance advice.
 
-### Access Control and Authorization
+### Access Control and Authorisation
 
-AtlasBridge enforces explicit authorization for agent commands through its policy evaluation pipeline. Every command must be permitted by a matching policy rule before execution is allowed.
+AtlasBridge enforces explicit authorisation for agent commands through its policy evaluation pipeline. Every command must be permitted by a matching policy rule before execution is allowed.
 
 Relevant framework areas:
 
-- **ISO 27001 (A.9)** — Access control policies and procedures. AtlasBridge's policy-driven authorization model provides a structured approach to controlling what actions AI agents can perform.
+- **ISO 27001 (A.9)** — Access control policies and procedures. AtlasBridge's policy-driven authorisation model provides a structured approach to controlling what actions AI agents can perform.
 - **SOC 2 (CC6.1)** — Logical and physical access controls. The fail-closed default and role-based dashboard access support the principle of least privilege.
 
 ### Audit Trail
@@ -63,7 +63,7 @@ The following capabilities may contribute to compliance programs:
 | Append-only audit log             | Chronological record of all governance actions, exportable in CSV format                                   |
 | Role-based access control         | Dashboard access restricted by user role (viewer, admin)                                                   |
 | Escalation with approval tracking | High-risk actions require explicit human approval with recorded rationale                                  |
-| Fail-closed default               | Unmatched commands are denied, preventing unauthorized actions                                             |
+| Fail-closed default               | Unmatched commands are denied, preventing unauthorised actions                                             |
 | Local-first execution             | Policy evaluation occurs locally without transmitting sensitive data externally                            |
 | Policy versioning                 | Policies can be reviewed, tested, and tracked over time                                                    |
 
@@ -74,19 +74,19 @@ To set appropriate expectations:
 - AtlasBridge does not perform compliance assessments or gap analyses
 - AtlasBridge does not generate compliance reports in framework-specific formats
 - AtlasBridge does not monitor compliance status or provide compliance scoring
-- AtlasBridge does not replace the need for organizational policies, training, or process documentation
+- AtlasBridge does not replace the need for organisational policies, training, or process documentation
 - AtlasBridge has not been independently audited against any compliance framework
 - Use of AtlasBridge does not imply or guarantee compliance with any standard
 
 ## Integrating AtlasBridge into a Compliance Program
 
-Organizations seeking to incorporate AtlasBridge into their compliance programs should:
+Organisations seeking to incorporate AtlasBridge into their compliance programs should:
 
-1. **Map controls** — identify which organizational controls AtlasBridge supports and document how the tool is used within each control's implementation
+1. **Map controls** — identify which organisational controls AtlasBridge supports and document how the tool is used within each control's implementation
 2. **Define retention** — establish audit log retention policies that align with regulatory and framework requirements
 3. **Document procedures** — create operational procedures for policy management, escalation handling, and audit log review
 4. **Review regularly** — periodically review policy configurations, escalation outcomes, and audit logs as part of ongoing compliance monitoring
-5. **Maintain evidence** — export and archive audit logs according to organizational retention schedules
+5. **Maintain evidence** — export and archive audit logs according to organisational retention schedules
 
 ## Related Documentation
 
