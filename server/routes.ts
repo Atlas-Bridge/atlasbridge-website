@@ -21,17 +21,46 @@ export async function registerRoutes(app: Express): Promise<void> {
     return candidates[0];
   }
 
+  // Canonical sidebar order — kept in sync with DOC_ORDER in client/src/pages/docs.tsx
+  const DOC_ORDER = [
+    "index",
+    "overview",
+    "architecture",
+    "installation",
+    "quickstart",
+    "dashboard",
+    "policy-engine",
+    "risk-engine",
+    "autonomy-modes",
+    "audit-log",
+    "replay",
+    "escalation",
+    "cli-reference",
+    "cloud-observe-mode",
+    "governance",
+    "security",
+    "compliance-alignment",
+    "enterprise-guide",
+    "troubleshooting",
+    "faq",
+    "glossary",
+  ];
+
   app.get("/api/docs", (_req, res) => {
     const docsDir = resolveDocsDir();
     try {
-      const files = fs
-        .readdirSync(docsDir)
-        .filter((f) => f.endsWith(".md"))
-        .sort();
-      const docs = files.map((f) => ({
-        slug: f.replace(".md", ""),
-        title: f
-          .replace(".md", "")
+      const available = new Set(
+        fs
+          .readdirSync(docsDir)
+          .filter((f) => f.endsWith(".md"))
+          .map((f) => f.replace(".md", "")),
+      );
+      // Return docs in canonical order, then any unlisted files alphabetically
+      const ordered = DOC_ORDER.filter((s) => available.has(s));
+      const unlisted = [...available].filter((s) => !DOC_ORDER.includes(s)).sort();
+      const docs = [...ordered, ...unlisted].map((slug) => ({
+        slug,
+        title: slug
           .replace(/-/g, " ")
           .replace(/\b\w/g, (c) => c.toUpperCase()),
       }));
