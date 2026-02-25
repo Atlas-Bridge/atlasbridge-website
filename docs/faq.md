@@ -46,11 +46,11 @@ See [CLI Reference](./cli-reference.md) for testing commands and [Replay](./repl
 
 ### What happens if no policy matches an action?
 
-When no policy rule matches an incoming action, the default fallback behavior applies. The default can be configured as `allow`, `deny`, or `escalate` depending on the organization's risk tolerance. In most production configurations, the recommended default is `escalate`.
+When no policy rule matches an incoming action, the default fallback behaviour applies. The default can be configured as `allow`, `deny`, or `escalate` depending on the organisation's risk tolerance. In most production configurations, the recommended default is `escalate`.
 
 ### Can policies be versioned?
 
-Yes. Every policy change is recorded with a version identifier, timestamp, and author. Policy versions can be pinned in production to prevent unintended behavioral changes. See [Enterprise Guide](./enterprise-guide.md) for policy version pinning.
+Yes. Every policy change is recorded with a version identifier, timestamp, and author. Policy versions can be pinned in production to prevent unintended behavioural changes. See [Enterprise Guide](./enterprise-guide.md) for policy version pinning.
 
 ## Risk Engine
 
@@ -66,7 +66,7 @@ Blast radius is a classification of the potential impact scope of an action. A c
 
 See [Glossary](./glossary.md) for the formal definition.
 
-### Can risk thresholds be customized?
+### Can risk thresholds be customised?
 
 Yes. Risk thresholds are configurable per workspace and can be segmented by environment (production, staging, development) and team role. Lower thresholds trigger escalation more frequently; higher thresholds allow more actions to proceed without human review.
 
@@ -100,7 +100,7 @@ Yes. Audit logs can be exported in CSV and JSON formats, filtered by time range,
 
 ### How long are audit logs retained?
 
-Retention is determined by your database storage and backup configuration. AtlasBridge does not automatically delete audit log entries. Retention policies should be configured based on your organization's requirements.
+Retention is determined by your database storage and backup configuration. AtlasBridge does not automatically delete audit log entries. Retention policies should be configured based on your organisation's requirements.
 
 ## Replay
 

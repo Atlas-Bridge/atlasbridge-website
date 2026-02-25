@@ -105,7 +105,7 @@ In specific circumstances, the computed risk score may be overridden:
 
 The risk engine operates on static command analysis. It does not:
 
-- Execute commands in a sandbox to observe behavior
+- Execute commands in a sandbox to observe behaviour
 - Analyze command output or side effects
 - Predict the runtime impact of scripts or piped commands
 - Evaluate commands inside shell scripts passed as arguments

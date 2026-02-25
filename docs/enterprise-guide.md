@@ -17,7 +17,7 @@ Each workspace operates as an independent governance boundary:
 ### Recommended Structure
 
 ```
-organization/
+organisation/
 ├── workspaces/
 │   ├── infrastructure/
 │   │   ├── policies/
@@ -36,7 +36,7 @@ Shared base policies can be referenced by individual workspaces while allowing w
 
 ## Policy Version Pinning
 
-In production environments, policy changes should be versioned and pinned to prevent unintended behavioral changes during active operations.
+In production environments, policy changes should be versioned and pinned to prevent unintended behavioural changes during active operations.
 
 ### Version Pinning Configuration
 
@@ -47,13 +47,13 @@ policy:
   auto_update: false
 ```
 
-When `pin` is enabled, the runtime uses the specified policy version regardless of newer versions being available. This ensures that governance behavior is predictable and changes are applied through an explicit update process.
+When `pin` is enabled, the runtime uses the specified policy version regardless of newer versions being available. This ensures that governance behaviour is predictable and changes are applied through an explicit update process.
 
 ### Policy Promotion Workflow
 
 1. **Draft**: New or modified policies are authored and reviewed in a staging workspace.
 2. **Test**: Policies are evaluated against historical sessions using replay to verify expected outcomes.
-3. **Approve**: Policy changes are reviewed and approved through the organization's change management process.
+3. **Approve**: Policy changes are reviewed and approved through the organisation's change management process.
 4. **Pin**: The approved policy version is pinned in the production workspace configuration.
 5. **Deploy**: The updated configuration is applied to the production workspace.
 

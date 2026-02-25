@@ -116,7 +116,7 @@ For local development or testing, escalations can be printed to stdout:
 export ATLASBRIDGE_CHANNEL=stdout
 ```
 
-This is the default behavior when no channel is configured.
+This is the default behaviour when no channel is configured.
 
 ## Database Setup
 

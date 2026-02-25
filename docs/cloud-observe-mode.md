@@ -6,7 +6,7 @@ AtlasBridge supports an optional cloud observe mode that provides read-only visi
 
 Cloud observe mode follows a strict observe-only constraint: the cloud endpoint can read governance data but cannot modify policies, trigger evaluations, execute commands, or alter any local state. All policy evaluation, risk scoring, and decision enforcement remain within the local execution boundary. The cloud layer is a consumer of telemetry data, not a participant in the governance process.
 
-This separation is intentional. AtlasBridge is designed so that the correctness and security of governance decisions never depend on network availability, cloud service uptime, or remote authorization. A workspace with cloud observe mode disabled operates identically to one with it enabled — the only difference is whether telemetry is transmitted.
+This separation is intentional. AtlasBridge is designed so that the correctness and security of governance decisions never depend on network availability, cloud service uptime, or remote authorisation. A workspace with cloud observe mode disabled operates identically to one with it enabled — the only difference is whether telemetry is transmitted.
 
 ## What Cloud Observe Mode Provides
 
@@ -98,7 +98,7 @@ cloud:
 | `redaction.commands` | When `true`, command strings are hashed before transmission. The cloud endpoint receives a hash rather than the plain text command. |
 | `redaction.targets`  | When `true`, target identifiers in audit events are hashed before transmission.                                                     |
 | `interval_seconds`   | How frequently telemetry is batched and transmitted. Defaults to `30`.                                                              |
-| `retry.*`            | Retry behavior when transmission fails. Failed transmissions do not affect local operation.                                         |
+| `retry.*`            | Retry behaviour when transmission fails. Failed transmissions do not affect local operation.                                        |
 
 ## Security Considerations
 
@@ -108,11 +108,11 @@ Cloud observe mode does not create any listening socket, HTTP server, or inbound
 
 ### API Key Management
 
-The cloud API key is referenced by environment variable name, not stored directly in the configuration file. This prevents accidental exposure through version control. The API key should be treated as a secret and rotated according to organizational security policy.
+The cloud API key is referenced by environment variable name, not stored directly in the configuration file. This prevents accidental exposure through version control. The API key should be treated as a secret and rotated according to organisational security policy.
 
 ### Data Minimization
 
-Each telemetry category can be independently disabled. Organizations that require cloud visibility for audit events but consider command strings sensitive can enable `audit_events` while disabling `evaluations` or enabling command redaction. This allows operators to match the telemetry surface to their data classification requirements.
+Each telemetry category can be independently disabled. Organisations that require cloud visibility for audit events but consider command strings sensitive can enable `audit_events` while disabling `evaluations` or enabling command redaction. This allows operators to match the telemetry surface to their data classification requirements.
 
 ### Transport Security
 
@@ -138,7 +138,7 @@ The local dashboard and cloud observe mode serve complementary purposes:
 - The **local dashboard** provides direct access to all governance data, including policy management, audit log review, and real-time metrics. It operates entirely within the local boundary.
 - **Cloud observe mode** provides a subset of this data to a remote endpoint for centralized monitoring. It does not replicate the policy management or configuration capabilities of the local dashboard.
 
-Organizations using cloud observe mode typically use it for aggregate visibility across multiple workspaces, alerting on anomalous governance patterns, or feeding governance telemetry into existing monitoring infrastructure.
+Organisations using cloud observe mode typically use it for aggregate visibility across multiple workspaces, alerting on anomalous governance patterns, or feeding governance telemetry into existing monitoring infrastructure.
 
 ## See Also
 
