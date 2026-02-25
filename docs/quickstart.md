@@ -8,7 +8,7 @@ This guide walks through a minimal working example: installing AtlasBridge, runn
 - A PostgreSQL database running and `DATABASE_URL` set
 - A terminal with shell access
 
-## Step 1: Initialize a Project
+## Step 1: Initialise a Project
 
 Create a working directory and run the setup command:
 
@@ -58,7 +58,7 @@ atlasbridge run claude --policy strict --mode assist
 Expected output:
 
 ```
-[SYSTEM] Supervisor initialized.
+[SYSTEM] Supervisor initialised.
 [POLICY] Loaded 3 rules from policies/default.yaml
 [POLICY] Mode: ASSIST
 [TRACE]  Local execution boundary verified.

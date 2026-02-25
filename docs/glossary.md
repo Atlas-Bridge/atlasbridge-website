@@ -46,7 +46,7 @@ An evaluation process that produces the same output given the same inputs, every
 
 ### Enforcement Mode
 
-The behavior specified by a policy rule when a match occurs:
+The behaviour specified by a policy rule when a match occurs:
 
 - **Strict**: Matching actions are denied without escalation.
 - **Warn**: Matching actions are permitted but flagged in the audit log.
@@ -54,7 +54,7 @@ The behavior specified by a policy rule when a match occurs:
 
 ### Environment Tag
 
-A label applied to the execution environment (e.g., `production`, `staging`, `development`) that influences risk scoring and policy evaluation. Environment tags allow the same policy set to produce different governance behaviors based on operational context.
+A label applied to the execution environment (e.g., `production`, `staging`, `development`) that influences risk scoring and policy evaluation. Environment tags allow the same policy set to produce different governance behaviours based on operational context.
 
 ### Escalation
 
@@ -98,7 +98,7 @@ An action taken by a human operator to approve an escalated action that would ot
 
 ### Policy
 
-A set of rules that define governance behavior for specific action patterns. Policies specify which actions match, what enforcement mode applies, and under what conditions escalation is triggered. See [Policy Engine](./policy-engine.md).
+A set of rules that define governance behaviour for specific action patterns. Policies specify which actions match, what enforcement mode applies, and under what conditions escalation is triggered. See [Policy Engine](./policy-engine.md).
 
 ### Policy DSL
 

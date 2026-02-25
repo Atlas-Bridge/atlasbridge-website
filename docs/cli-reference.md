@@ -1,6 +1,6 @@
 # CLI Reference
 
-AtlasBridge provides a command-line interface for initializing workspaces, running policy evaluations, testing policies, and replaying sessions. All commands operate locally within the execution boundary.
+AtlasBridge provides a command-line interface for initialising workspaces, running policy evaluations, testing policies, and replaying sessions. All commands operate locally within the execution boundary.
 
 ## Global Options
 
@@ -16,7 +16,7 @@ AtlasBridge provides a command-line interface for initializing workspaces, runni
 
 ### `atlasbridge init`
 
-Initialize a new AtlasBridge workspace in the current directory. Creates the default configuration file, policy directory, and audit log location.
+Initialise a new AtlasBridge workspace in the current directory. Creates the default configuration file, policy directory, and audit log location.
 
 ```
 atlasbridge init [--dir <path>]
